@@ -12,9 +12,10 @@ export default function Contact() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <h1 className={styles.title}>Contact</h1>
+        <button type="button" className="btn btn-secondary">
+          Primary
+        </button>
 
         <p className={styles.description}>
           Get started by editing{" "}
