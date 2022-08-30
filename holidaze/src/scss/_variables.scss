@@ -1,16 +1,22 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
 // Custom color theme 
 
 $yellow: #fcc632;
 $white: #fff;
 
-$primary: #0A2472;
-$secondary: #001C55;
-$dark: #00072D;
+$theme-colors: (
+        $primary: #0A2472,
+        $secondary: #001C55,
+        $dark: #00072D,
+);
 
-$navbar-dark-color: rgba($white, .55)  ;
-$navbar-dark-hover-color: rgba($white, .75)  ;
-$navbar-dark-active-color: $white   ;
-$navbar-dark-disabled-color: rgba($white, .25)  ;
-$navbar-dark-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$white}' stroke-linecap='none' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>")  ;
-$navbar-dark-toggler-border-color: none ;
+
+// $navbar-dark-color: rgba($white, .55)  ;
+// $navbar-dark-hover-color: rgba($white, .75)  ;
+// $navbar-dark-active-color: $white   ;
+// $navbar-dark-disabled-color: rgba($white, .25)  ;
+// $navbar-dark-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$white}' stroke-linecap='none' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>")  ;
+// $navbar-dark-toggler-border-color: none ;
+
 
