@@ -1,17 +1,19 @@
-@import '~bootstrap/scss/bootstrap.scss';
 
 // Custom color theme 
 
 $yellow: #fcc632;
 $white: #fff;
 
+$primary: #0A2472;
+$secondary: #001C55;
+$dark: #00072D;
+
 $theme-colors: (
-        $primary: #0A2472,
-        $secondary: #001C55,
-        $dark: #00072D,
+    "primary": $primary,
 );
 
 
+ @import "~bootstrap/scss/bootstrap.scss"
 // $navbar-dark-color: rgba($white, .55)  ;
 // $navbar-dark-hover-color: rgba($white, .75)  ;
 // $navbar-dark-active-color: $white   ;
