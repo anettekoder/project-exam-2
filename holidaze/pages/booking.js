@@ -12,6 +12,9 @@ export default function Booking() {
 
       <main>
         <h1>Booking</h1>
+        <h2>This is a sub-header</h2>
+        <h3>Sub-header number 3</h3>
+        <p>Lorem ipsum shdfhskjdhfkjshdfkjsahdkjfhksjdahkhsdfjdsk</p>
       </main>
 
       <footer>
