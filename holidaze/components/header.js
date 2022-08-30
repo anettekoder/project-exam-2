@@ -24,7 +24,7 @@ const MenuItem = ({ title, path }) => {
   const router = useRouter();
 
   return (
-    <Link href={path} passHref>
+    <Link href={path} passHref className="ml-auto">
       <Nav.Link active={router.pathname === path}>{title}</Nav.Link>
     </Link>
   );
@@ -32,12 +32,15 @@ const MenuItem = ({ title, path }) => {
 
 const Header = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="primary" variant="dark" expand="lg">
       <Container fluid>
         <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          className="outline-none"
+        />
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+          <Nav>
             {menuLinks.map((item, index) => (
               <MenuItem {...item} key={index} />
             ))}
