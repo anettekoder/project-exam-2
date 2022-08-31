@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import JumbotronLarge from "../components/jumbotron/jumbotron";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       </Head>
 
       <main>
+        <JumbotronLarge />
         <h1>Homepage</h1>
         <h2>This is a sub-header</h2>
         <h3>Sub-header number 3</h3>

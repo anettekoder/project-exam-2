@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,IAAI,CAAJ,WAAI;AACJ,IAAI,CAAJ,OAAI",
+    "mappings": "AAAA,IAAI,CAAJ,WAAI;AACJ,IAAI,CAAJ,OAAI;AACJ,IAAI,CAAJ,aAAI",
     "sources": [
         "../holidaze/src/scss/styles.scss"
     ],
