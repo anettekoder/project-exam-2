@@ -1,4 +1,5 @@
 @use "variables";
 @use "fonts";
-@use "global.scss";
+@use "jumbotron";
+@use "global";
 /*# sourceMappingURL=styles.css.map */

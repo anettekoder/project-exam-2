@@ -1,0 +1,52 @@
+@use "variables" as v;
+
+.jumbotron {
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../../assets/images/headers/header1.jpg") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    color: v.$white;
+   
+
+    .jumbotron-inner {
+        width: 70%;
+        
+    }
+
+    .overlay {
+        background: rgba(0, 28, 85, 0.66);
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+.jumbotron {
+        display: none;
+    }
+
+}
+
+@media (max-width: 768px) {
+     .jumbotron-inner {
+        display: none;
+    }
+
+}
+@media (max-width: 768px) {
+    .h1 .h2 {
+        display: none;
+    }
+
+}
+
+
+
