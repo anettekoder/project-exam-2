@@ -10,7 +10,7 @@
     background-repeat: no-repeat;
     overflow: hidden;
     color: v.$white;
-   
+
 
     .jumbotron-inner {
         width: 70%;
@@ -27,6 +27,8 @@
         justify-content: center;
     }
 }
+
+
 
 @media (max-width: 768px) {
 .jumbotron {
@@ -47,6 +49,5 @@
     }
 
 }
-
 
 

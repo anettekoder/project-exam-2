@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
+import JumbotronSmall from "../components/jumbotron/jumbotronSmall";
+import hotel from "../assets/images/headers/hotel.jpg";
 
 export default function Booking() {
   return (
@@ -11,6 +13,7 @@ export default function Booking() {
       </Head>
 
       <main>
+        <JumbotronSmall imgPath={hotel} />
         <h1>Contact</h1>
         <h2>This is a sub-header</h2>
         <h3>Sub-header number 3</h3>

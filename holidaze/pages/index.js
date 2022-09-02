@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import JumbotronLarge from "../components/jumbotron/jumbotron";
+import JumbotronLarge from "../components/jumbotron/jumbotronLarge";
 
 export default function Home() {
   return (
