@@ -1,11 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Header2 from "../../assets/images/headers/header2.jpg";
 
-// Jumbotron for landingpage
+// Image for jumbotron for smaller devices
 
 const JumbotronSmall = ({ imgPath }) => {
   return (

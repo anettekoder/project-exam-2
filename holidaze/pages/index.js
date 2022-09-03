@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import AmusementsCards from "../components/cards/amusements";
 import JumbotronLarge from "../components/jumbotron/jumbotronLarge";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
 
       <main>
         <JumbotronLarge />
+        <AmusementsCards />
       </main>
 
       <footer>

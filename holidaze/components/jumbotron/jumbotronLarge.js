@@ -6,7 +6,8 @@ import Col from "react-bootstrap/Col";
 import Header1 from "../../assets/images/headers/header1.jpg";
 import SearchInput from "../search";
 
-// Jumbotron for landingpage
+// Jumbotron for landingpage - tablet devices
+// In Container
 
 const JumbotronLarge = () => {
   return (
@@ -14,11 +15,11 @@ const JumbotronLarge = () => {
       <div className="jumbotron shadow-lg mb-5 bg-black ">
         <div className="overlay">
           <div className="jumbotron-inner">
-            <h1 className="pb-4 .d-none .d-md-block .d-lg-block">
+            <h1 className="h1 pb-4 .d-none .d-md-block .d-lg-block">
               Holidaze is a service for booking hotels, apartments and B&B in
               Bergen.
             </h1>
-            <h2 className=".d-none d-md-block d-lg-block">
+            <h2 className="h2 .d-none d-md-block d-lg-block">
               Find your accommodation with us now, and stay safely and
               offordable.
             </h2>
@@ -35,10 +36,14 @@ const JumbotronLarge = () => {
             <Image src={Header1} />
           </Row>
           <Row>
-            <h1 className="py-4 .d-none .d-md-block .d-lg-block">
+            <h1 className="h1 py-4 .d-none .d-md-block .d-lg-block">
               Holidaze is a service for booking hotels, apartments and B&B in
               Bergen.
             </h1>
+            <h2 className="h2 .d-none .d-md-block .d-lg-block">
+              Find your accommodation with us now, and stay safely and
+              offordable.
+            </h2>
           </Row>
         </Col>
       </Container>

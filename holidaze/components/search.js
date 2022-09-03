@@ -13,7 +13,7 @@ const SearchInput = () => {
           <Row className="g-0">
             <Col xs="12" md="6" className="m-0">
               <Form.Control
-                className="px-5 py-3"
+                className="pl-2 py-3"
                 size="lg"
                 aria-label="Small"
                 aria-describedby="inputGroup-sizing-sm"
