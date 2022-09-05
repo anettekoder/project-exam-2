@@ -33,7 +33,10 @@ const AmusementsCards = () => {
     return (
       <Col key={index}>
         <Card>
-          <Card.Img as {Image} variant="top" src={card.image} />
+          <div style={{ position: "relative", width: "100%", height: "100%" }}>
+            <Image src={card.image} />
+          </div>
+
           <Card.Body>
             <Card.Title className="h3">{card.title}</Card.Title>
             <Card.Text className="p">{card.text}</Card.Text>
