@@ -1,20 +1,55 @@
 import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Image from "next/image";
+import Floyen from "../../assets/images/excursions/floyen.jpg";
+
+// Card details
 
 // Amusements cards
 
 const AmusementsCards = () => {
-  return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-      </Card.Body>
-    </Card>
-  );
+  const CardDetails = [
+    {
+      image: { Floyen },
+      title: "Be transported by Fløybanen to the top of Fløyfjellet",
+      text: "Get a beautiful view over the whole city of Bergen from the top of Fløyen.",
+      key: "floyen",
+    },
+    {
+      image: "",
+      title: "Edvard Grieg Museum -Troldhaugen.",
+      text: "Troldhaugen has its own museum shop with a rich selection of souvenirs, books, music and gift items. ",
+      key: "Edvard",
+    },
+    {
+      image: "",
+      title: "In Bergen you will find a large and tempting selection of shops.",
+      text: "Go shoping in small and specialized shops to large department stores.",
+      key: "shopping",
+    },
+  ];
+  const renderCard = (card, index) => {
+    return (
+      <Row xs={1} md={3} className="g-4 p-5">
+        <Col>
+          <Card key={index}>
+            <Card.Img variant="top" src="" />
+
+            <Card.Body>
+              <Card.Title className="h3">{card.title}</Card.Title>
+              <Card.Text className="p">
+                Get a beautiful view over the whole city of Bergen from the top
+                of Fløyen.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    );
+  };
+
+  return <div>{CardDetails.map(renderCard)}</div>;
 };
 
 export default AmusementsCards;

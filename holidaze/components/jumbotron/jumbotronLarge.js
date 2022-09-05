@@ -40,10 +40,6 @@ const JumbotronLarge = () => {
               Holidaze is a service for booking hotels, apartments and B&B in
               Bergen.
             </h1>
-            <h2 className="h2 .d-none .d-md-block .d-lg-block">
-              Find your accommodation with us now, and stay safely and
-              offordable.
-            </h2>
           </Row>
         </Col>
       </Container>
