@@ -33,14 +33,10 @@ const AmusementsCards = () => {
     return (
       <Col>
         <Card key={index}>
-          <Card.Img variant="top" src="" />
-
+          <Card.Img as { Image } variant="top" src="" />
           <Card.Body>
             <Card.Title className="h3">{card.title}</Card.Title>
-            <Card.Text className="p">
-              Get a beautiful view over the whole city of Bergen from the top of
-              Fløyen.
-            </Card.Text>
+            <Card.Text className="p">{card.text}</Card.Text>
           </Card.Body>
         </Card>
       </Col>
