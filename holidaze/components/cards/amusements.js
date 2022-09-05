@@ -11,7 +11,7 @@ import Floyen from "../../assets/images/excursions/floyen.jpg";
 const AmusementsCards = () => {
   const CardDetails = [
     {
-      image: { Floyen },
+      image: Floyen,
       title: "Be transported by Fløybanen to the top of Fløyfjellet",
       text: "Get a beautiful view over the whole city of Bergen from the top of Fløyen.",
       key: "floyen",
@@ -31,9 +31,9 @@ const AmusementsCards = () => {
   ];
   const renderCard = (card, index) => {
     return (
-      <Col>
-        <Card key={index}>
-          <Card.Img as { Image } variant="top" src="" />
+      <Col key={index}>
+        <Card>
+          <Card.Img as {Image} variant="top" src={card.image} />
           <Card.Body>
             <Card.Title className="h3">{card.title}</Card.Title>
             <Card.Text className="p">{card.text}</Card.Text>
