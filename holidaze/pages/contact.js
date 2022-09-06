@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Heading from "../components/heading";
 import JumbotronSmall from "../components/jumbotron/jumbotronSmall";
 import Header3 from "../assets/images/headers/header3.jpg";
 
@@ -13,7 +14,7 @@ export default function Booking() {
 
       <main>
         <JumbotronSmall imgPath={Header3} />
-        <h1>Contact</h1>
+        <Heading headingText="Contact" />
         <h2>This is a sub-header</h2>
         <h3>Sub-header number 3</h3>
         <p>Lorem ipsum shdfhskjdhfkjshdfkjsahdkjfhksjdahkhsdfjdsk</p>
