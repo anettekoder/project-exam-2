@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import Heading from "../components/heading";
 import AmusementsCards from "../components/cards/amusements";
 import JumbotronLarge from "../components/jumbotron/jumbotronLarge";
 
@@ -14,6 +14,7 @@ export default function Home() {
 
       <main>
         <JumbotronLarge />
+        <Heading headingText="home" />
         <AmusementsCards />
       </main>
     </div>
