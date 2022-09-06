@@ -57,11 +57,13 @@ p {
     font-size: 1em;
     line-height: 1.375em;
 }
- p {
-     font-size: 1em;
-     line-height: 1.125em;
- }
-
+@media (max-width: 768px) {
+    p {
+            font-size: 1em;
+            line-height: 1.125em;
+        }
+ 
+}
 
  // Nav link font-styles
 

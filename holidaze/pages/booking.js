@@ -2,7 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 import JumbotronSmall from "../components/jumbotron/jumbotronSmall";
 import Header2 from "../assets/images/headers/header2.jpg";
-import City from "../assets/images/headers/city.jpg";
 
 export default function Booking() {
   return (
@@ -20,19 +19,6 @@ export default function Booking() {
         <h3>Sub-header number 3</h3>
         <p>Lorem ipsum shdfhskjdhfkjshdfkjsahdkjfhksjdahkhsdfjdsk</p>
       </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   );
 }

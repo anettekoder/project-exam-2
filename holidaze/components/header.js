@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Mainlogo from "../assets/logo/main-logo-white.png";
 
-const menuLinks = [
+export const menuLinks = [
   {
     title: "Home",
     path: "/",
