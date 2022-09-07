@@ -10,11 +10,16 @@ const MenuItem = ({ title, path }) => {
   const router = useRouter();
 
   return (
-    <Link href={path} passHref className="ml-auto">
-      <ul active={router.pathname === path}>
-        <li>{title}</li>
-      </ul>
-    </Link>
+    <li>
+      <Link
+        href={path}
+        passHref
+        className="ml-auto"
+        active={router.pathname === path}
+      >
+        {title}
+      </Link>
+    </li>
   );
 };
 
@@ -22,26 +27,28 @@ const Footer = () => {
   return (
     <Container
       fluid
-      className="bg-primary text-white text-center"
-      style={{ height: 300 }}
+      className="bg-primary text-white text-center "
+      style={{ minHeight: 300 }}
     >
-      <Row className="py-5">
-        <Col>
+      <Row className="py-5 gy-4">
+        <Col className="xs={span:12} md={4} footer-navigation">
           <div className="p">Costumer service:</div>
-          {menuLinks.map((item, index) => (
-            <MenuItem {...item} key={index} />
-          ))}
+          <ul>
+            {menuLinks.map((item, index) => (
+              <MenuItem {...item} key={index} />
+            ))}
+          </ul>
         </Col>
-        <Col xs={{ order: "last" }} className="p">
+        <Col xs={{ span: 12, order: "last" }} md={{ span: 4 }} className="p">
           <div className="p pb-1">Social media</div>
           <InstagramLogo width={30} height={30} />
         </Col>
-        <Col md={{ order: "last" }} className="p">
+        <Col xs={12} md={{ span: 4, order: "last" }} className="p ">
           Log in Admin
         </Col>
       </Row>
       <Row>
-        <Col xs={12} className="p">
+        <Col xs={12} className="p pb-4">
           &copy; Holidaze Booking. All rights reserved.
         </Col>
       </Row>

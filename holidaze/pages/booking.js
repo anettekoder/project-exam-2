@@ -15,7 +15,10 @@ export default function Booking() {
 
       <main>
         <JumbotronSmall imgPath={Header2} />
-        <Heading headingText="Booking" />
+        <div className="text-center">
+          <Heading headingText="Booking" />
+        </div>
+
         <h2>This is a sub-header</h2>
         <h3>Sub-header number 3</h3>
         <p>Lorem ipsum shdfhskjdhfkjshdfkjsahdkjfhksjdahkhsdfjdsk</p>

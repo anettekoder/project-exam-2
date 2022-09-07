@@ -6,7 +6,7 @@ import Image from "next/image";
 const JumbotronSmall = ({ imgPath }) => {
   return (
     <>
-      <div>
+      <div className="pb-5">
         <Image src={imgPath} height={1500} objectFit={"cover"} />
       </div>
     </>

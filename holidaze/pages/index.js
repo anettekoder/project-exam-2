@@ -14,7 +14,7 @@ export default function Home() {
 
       <main>
         <JumbotronLarge />
-        <Heading headingText="home" />
+
         <AmusementsCards />
       </main>
     </div>

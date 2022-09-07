@@ -1,0 +1,12 @@
+.footer-navigation {
+    ul {
+        list-style-type: none;
+        li > a {
+           
+            color: white;
+            &:hover {
+                color: red;
+            }
+        }
+    }
+}

@@ -34,13 +34,8 @@ const AmusementsCards = () => {
   const renderCard = (card, index) => {
     return (
       <Col key={index}>
-        <Card className="h-100 d-flex">
-          <Card.Img
-            style={{ height: "200px" }} // Not working
-            as={Image}
-            variant="top"
-            src={card.image}
-          />
+        <Card className="h-100 d-flex amusement-card">
+          <Card.Img as={Image} variant="top" src={card.image} />
 
           <Card.Body height="200px">
             <Card.Title className="h3">{card.title}</Card.Title>
