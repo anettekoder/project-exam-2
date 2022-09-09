@@ -1,17 +1,15 @@
 {
   "name": "holidaze",
   "version": "0.1.0",
- 
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css & live-server",
     "lint": "next lint"
-       
- 
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
     "next": "12.2.5",
     "react": "18.2.0",
@@ -24,8 +22,4 @@
     "live-server": "^1.2.2",
     "sass": "^1.54.6"
   }
-  
-  
-  
-
 }

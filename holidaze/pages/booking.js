@@ -3,6 +3,7 @@ import Image from "next/image";
 import JumbotronSmall from "../components/jumbotron/jumbotronSmall";
 import Header2 from "../assets/images/headers/header2.jpg";
 import Heading from "../components/heading";
+import HotelList from "../components/HotelList";
 
 export default function Booking() {
   return (
@@ -21,7 +22,7 @@ export default function Booking() {
 
         <h2>This is a sub-header</h2>
         <h3>Sub-header number 3</h3>
-        <p>Lorem ipsum shdfhskjdhfkjshdfkjsahdkjfhksjdahkhsdfjdsk</p>
+        <HotelList />
       </main>
     </div>
   );

@@ -30,7 +30,7 @@ const Footer = () => {
       className="bg-primary text-white text-center "
       style={{ minHeight: 300 }}
     >
-      <Row className="py-5 gy-4">
+      <Row className="py-5 gy-4 mt-5">
         <Col className="xs={span:12} md={4} footer-navigation">
           <div className="p">Costumer service:</div>
           <ul>
