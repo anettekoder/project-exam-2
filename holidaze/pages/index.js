@@ -2,8 +2,6 @@ import Head from "next/head";
 import Heading from "../components/heading";
 import AmusementsCards from "../components/cards/amusements";
 import JumbotronLarge from "../components/jumbotron/jumbotronLarge";
-import { BASE_URL } from "../constants/api";
-console.log(BASE_URL);
 
 export default function Home() {
   return (

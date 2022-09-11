@@ -1,0 +1,13 @@
+.hotel-list {
+    list-style-type: none;
+}
+
+.hotel-list-card {
+    >span:first-of-type {
+        height: 250px !important;
+
+        img {
+            object-fit: cover;
+        }
+    }
+}
