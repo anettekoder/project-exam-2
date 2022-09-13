@@ -1,13 +1,43 @@
+@use "variables" as v;
+
 .hotel-list {
     list-style-type: none;
+    border: none !important;
+    background: v.$grey !important;  
 }
 
-.hotel-list-card {
-    >span:first-of-type {
-        height: 250px !important;
 
-        img {
-            object-fit: cover;
-        }
+
+
+
+@media (max-width: 768px) {
+.hotel-list {
+        background: v.$white !important;
     }
+
 }
+
+
+
+// .hotel-list-card {
+//     >span:first-of-type {
+//         padding: 0 !important;
+//         width: 300px !important;
+//         min-width: 150px !important;
+//         min-height: 150px !important;
+        
+
+//         img {
+//             margin: 0 !important;
+//             object-fit: cover;
+//             float: left!important;
+            
+//         }
+//     }
+// }
+
+// .card-info {
+//     min-width: 150px !important;
+//     overflow: hidden !important;
+    
+// }

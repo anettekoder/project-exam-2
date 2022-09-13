@@ -18,19 +18,20 @@ export default function Booking(props) {
 
       <main>
         <JumbotronSmall imgPath={Header2} />
-        <div className="text-center">
-          <Heading headingText="Booking" />
+        <div className="">
+          <Heading
+            headingText="Book accommodation for your next trip."
+            subHeadingText="Experience Bergen's best hotels"
+          />
         </div>
 
-        <h2>This is a sub-header</h2>
-        <h3>Sub-header number 3</h3>
         <HotelList hotels={hotels} />
       </main>
     </div>
   );
 }
 export async function getServerSideProps() {
-  const response = await fetch(BASE_URL + "?populate=images");
+  const response = await fetch(BASE_URL + "?populate=*");
   const hotels = await response.json();
 
   return { props: { hotels } };

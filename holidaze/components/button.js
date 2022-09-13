@@ -4,7 +4,12 @@ const bgColor = {
   color: "#00072D",
 };
 
-const CustomButton = ({ content }) => {
+const btnStyle = {
+  backgroundColor: "#001C55",
+  color: "#fff",
+};
+
+const CustomButton = ({ content, style }) => {
   return (
     <div className="d-grid d-md-block pt-2 pt-md-0 ">
       <Button
