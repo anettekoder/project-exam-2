@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ["https://strapi-holidaze-exam.herokuapp.com/"],
+  },
   reactStrictMode: true,
   swcMinify: true,
   webpack(config) {

@@ -31,8 +31,14 @@ export default function Booking(props) {
   );
 }
 export async function getServerSideProps() {
-  const response = await fetch(BASE_URL + "?populate=*");
-  const hotels = await response.json();
+  let hotels = [];
+
+  try {
+    const response = await fetch(BASE_URL + "?populate=*");
+    hotels = await response.json();
+  } catch (error) {
+    console.log(error);
+  }
 
   return { props: { hotels } };
 }

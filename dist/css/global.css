@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap");
 :export {
   primary: #0A2472;
   secondary: #001C55;
@@ -10581,121 +10580,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.h1 {
-  font-family: "Montserrat", sans-serif !important;
-  font-weight: 600 !important;
-  font-size: 2.5em !important;
-  line-height: 1.05em !important;
-}
-
-@media (max-width: 768px) {
-  .h1 {
-    font-size: 2em !important;
-    line-height: 1.25em !important;
-  }
-}
-.h2 {
-  font-family: "Montserrat", sans-serif !important;
-  font-weight: 500 !important;
-  font-size: 2em !important;
-  line-height: 1.125em !important;
-}
-
-@media (max-width: 768px) {
-  .h2 {
-    font-size: 1.625em !important;
-    line-height: 1.125em !important;
-  }
-}
-.h3 {
-  font-family: "Montserrat", sans-serif;
-  color: #001C55 !important;
-  font-weight: 400 !important;
-  font-size: 1.5em !important;
-  line-height: 1.25em !important;
-}
-
-@media (max-width: 768px) {
-  .h3 {
-    font-size: 1.5em !important;
-    line-height: 1.125em !important;
-  }
-}
-p {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 300;
-  font-size: 1em;
-  line-height: 1.375em;
-}
-
-@media (max-width: 768px) {
-  p {
-    font-size: 1em;
-    line-height: 1.125em;
-  }
-}
-.nav-link {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 300;
-  font-size: 1.2rem;
-}
-
-.jumbotron {
-  height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url("../../assets/images/headers/header1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  color: #fff;
-}
-.jumbotron .jumbotron-inner {
-  width: 70%;
-}
-.jumbotron .overlay {
-  background: rgba(0, 28, 85, 0.66);
-  height: 100%;
-  width: 100%;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (max-width: 768px) {
-  .jumbotron {
-    display: none;
-  }
-}
-@media (max-width: 768px) {
-  .jumbotron-inner {
-    display: none;
-  }
-}
-@media (max-width: 768px) {
-  .h1 .h2 {
-    display: none;
-  }
-}
-.footer-navigation ul {
-  list-style-type: none;
-}
-.footer-navigation ul li > a {
-  color: white;
-}
-.footer-navigation ul li > a:hover {
-  color: red;
-}
-
-.amusement-card > span:first-of-type {
-  height: 250px !important;
-}
-.amusement-card > span:first-of-type img {
-  object-fit: cover;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -10706,16 +10590,4 @@ body {
   background: #fff;
 }
 
-.hotel-list {
-  list-style-type: none;
-  border: none !important;
-  background: #F5F5F5 !important;
-}
-
-@media (max-width: 768px) {
-  .hotel-list {
-    background: #fff !important;
-  }
-}
-
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=global.css.map */

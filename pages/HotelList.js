@@ -1,4 +1,4 @@
-import Hotels from "../components/Hotels";
+import Hotels from "../components/hotels/Hotels";
 
 const HotelList = ({ hotels }) => {
   return (
