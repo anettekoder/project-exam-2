@@ -1,14 +1,12 @@
 import Link from "next/link";
-import { useState } from "react";
+import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "next/image";
-// import Header2 from "../assets/images/headers/header2.jpg";
+import Header2 from "../../assets/images/headers/header2.jpg";
 import { BASE_URL } from "../../constant/api";
 import Button from "react-bootstrap/Button";
-import BookingModal from "../enquiries/EnquiryModal";
-import Modal from "react-bootstrap/Modal";
 
 const btnStyle = {
   backgroundColor: "#001C55",
@@ -16,22 +14,9 @@ const btnStyle = {
 };
 
 const Hotels = ({ hotels }) => {
-  // Modal show
-
-  const [showModal, setShowModal] = useState(false);
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   console.log(hotels);
   return (
     <>
-      <BookingModal
-        showModal={showModal}
-        setShowModal={setShowModal}
-        hotelName={"hotel name"}
-      />
       <Row xs={1} md={2} className="g-4">
         {hotels &&
           hotels.data.map((hotel) => {
@@ -39,11 +24,7 @@ const Hotels = ({ hotels }) => {
               <div key={hotel.id}>
                 <Col>
                   <Card className="mx-5 mb-5 hotel-list">
-                    <Card.Img
-                      as={Image}
-                      src={hotel.attributes.images}
-                      alt="image"
-                    />
+                    <Card.Img as={Image} src={Header2} alt="image" />
 
                     <Card.Body>
                       {" "}
@@ -66,9 +47,7 @@ const Hotels = ({ hotels }) => {
                           NOK {hotel.attributes.price},-
                         </p>
                         <div className="d-flex justify-content-end">
-                          <Button variant="primary" onClick={handleShow}>
-                            Launch demo modal
-                          </Button>
+                          <Button style={btnStyle}>Book hotel</Button>
                         </div>
                       </Col>
                     </Card.Body>

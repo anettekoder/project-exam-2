@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "sass src/scss:dist/css",
+    "build": "sass src/scss:dist/css && next build",
     "watch": "sass --watch src/scss:dist/css & live-server",
     "lint": "next lint"
   },
