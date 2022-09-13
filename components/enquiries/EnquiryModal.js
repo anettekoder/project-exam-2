@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-function BookingModal() {
+function BookingModal({ showModal, setShowModal, hotelName }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -10,10 +10,6 @@ function BookingModal() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
