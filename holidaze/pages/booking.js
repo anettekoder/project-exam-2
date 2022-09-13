@@ -18,7 +18,7 @@ export default function Booking(props) {
 
       <main>
         <JumbotronSmall imgPath={Header2} />
-        <div className="">
+        <div className="container">
           <Heading
             headingText="Book accommodation for your next trip."
             subHeadingText="Experience Bergen's best hotels"

@@ -9,7 +9,7 @@ const btnStyle = {
   color: "#fff",
 };
 
-const CustomButton = ({ content, style }) => {
+const CustomButton = ({ content }) => {
   return (
     <div className="d-grid d-md-block pt-2 pt-md-0 ">
       <Button
