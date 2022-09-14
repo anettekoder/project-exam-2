@@ -7,11 +7,7 @@ import Image from "next/image";
 import Header2 from "../../assets/images/headers/header2.jpg";
 import { BASE_URL } from "../../constant/api";
 import Button from "react-bootstrap/Button";
-
-const btnStyle = {
-  backgroundColor: "#001C55",
-  color: "#ffff",
-};
+import EnquiryModal from "../enquiries/EnquiryModal";
 
 const Hotels = ({ hotels }) => {
   console.log(hotels);
@@ -47,7 +43,7 @@ const Hotels = ({ hotels }) => {
                           NOK {hotel.attributes.price},-
                         </p>
                         <div className="d-flex justify-content-end">
-                          <Button style={btnStyle}>Book hotel</Button>
+                          <EnquiryModal />
                         </div>
                       </Col>
                     </Card.Body>

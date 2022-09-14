@@ -1,31 +1,61 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { DateRange } from "react-date-range";
 
-function BookingModal({ showModal, setShowModal, hotelName }) {
+const btnStyle = {
+  backgroundColor: "#001C55",
+  color: "#ffff",
+};
+
+function EnquiryModal() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [state, setState] = useState([
+    {
+      startDate: new Date(),
+      endDate: null,
+      key: "selection",
+    },
+  ]);
+
+  <DateRange
+    editableDateInputs={true}
+    onChange={(item) => setState([item.selection])}
+    moveRangeOnFirstSelection={false}
+    ranges={state}
+  />;
+
   return (
     <>
-      <Modal show={show} onHide={handleClose}>
+      <Button variant="primary" onClick={handleShow} style={btnStyle}>
+        Book now
+      </Button>
+
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Modal title</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+        <Modal.Body>
+          <DateRange />
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
+          <Button variant="primary">Understood</Button>
         </Modal.Footer>
       </Modal>
     </>
   );
 }
 
-export default BookingModal;
+export default EnquiryModal;

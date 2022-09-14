@@ -1,3 +1,5 @@
+import "react-date-range/dist/styles.css"; // main css file
+import "react-date-range/dist/theme/default.css"; // theme css file
 import SSRProvider from "react-bootstrap/SSRProvider";
 import Layout from "../components/layout";
 import "../src/scss/styles.scss";

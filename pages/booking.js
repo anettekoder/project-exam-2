@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import JumbotronSmall from "../components/jumbotron/jumbotronSmall";
-import Floyen from "../assets/images/excursions/floyen.jpg";
+import Header2 from "../assets/images/headers/header2.jpg";
 import Heading from "../components/heading";
 import HotelList from "./HotelList";
 import { BASE_URL } from "../constant/api";
@@ -17,7 +17,7 @@ export default function Booking(props) {
       </Head>
 
       <main>
-        <JumbotronSmall imgPath={Floyen} />
+        <JumbotronSmall imgPath={Header2} />
         <div className="container">
           <Heading
             headingText="Book accommodation for your next trip."
