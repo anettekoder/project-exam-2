@@ -22,13 +22,6 @@ function EnquiryModal() {
     },
   ]);
 
-  <DateRange
-    editableDateInputs={true}
-    onChange={(item) => setState([item.selection])}
-    moveRangeOnFirstSelection={false}
-    ranges={state}
-  />;
-
   return (
     <>
       <Button variant="primary" onClick={handleShow} style={btnStyle}>
@@ -42,16 +35,21 @@ function EnquiryModal() {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Booking</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <DateRange />
+          <DateRange
+            editableDateInputs={true}
+            onChange={(item) => setState([item.selection])}
+            moveRangeOnFirstSelection={false}
+            ranges={state}
+          />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary">Understood</Button>
+          <Button variant="primary">Book reservation</Button>
         </Modal.Footer>
       </Modal>
     </>

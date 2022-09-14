@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Header1 from "../../assets/images/headers/header1.jpg";
-import SearchInput from "../search";
+import SearchInput from "../search/search";
 import Heading from "../heading";
 
 // Jumbotron for landingpage - tablet devices

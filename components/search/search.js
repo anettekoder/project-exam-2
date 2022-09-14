@@ -3,7 +3,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import CustomButton from "../components/button";
+import CustomButton from "../button";
 
 const SearchInput = () => {
   return (
@@ -13,6 +13,7 @@ const SearchInput = () => {
           <Row className="g-0">
             <Col xs="12" md="6" className="m-0">
               <Form.Control
+                id="search-bar"
                 className="pl-2 py-3"
                 size="lg"
                 aria-label="Small"
@@ -31,3 +32,17 @@ const SearchInput = () => {
 };
 
 export default SearchInput;
+
+//Fetch hotels
+export async function getServerSideProps() {
+  let hotels = [];
+
+  try {
+    const response = await fetch(BASE_URL + "?populate=*");
+    hotels = await response.json();
+  } catch (error) {
+    console.log(error);
+  }
+
+  return { props: { hotels } };
+}
