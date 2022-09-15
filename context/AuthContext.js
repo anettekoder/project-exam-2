@@ -1,12 +1,16 @@
-import React, { useState } from "react";
-import useLocalStorage from "../public/hooks/useLocalStorage";
+import { createContext, useState } from "react";
 
-const AuthContext = React.createContext([null, () => {}]);
+const AuthContext = createContext({
+  user: null,
+  login: () => {},
+  logout: () => {},
+  authReady: false,
+});
 
 export const AuthProvider = (props) => {
-  const [auth, setAuth] = useLocalStorage("auth");
+  const [user, setUser] = useState(null);
   return (
-    <AuthContext.Provider value={[auth, setAuth]}>
+    <AuthContext.Provider value={[user, setUser]}>
       {props.children}
     </AuthContext.Provider>
   );

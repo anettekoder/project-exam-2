@@ -6,8 +6,11 @@ import Row from "react-bootstrap/Row";
 import Image from "next/image";
 import Header2 from "../../assets/images/headers/header2.jpg";
 import { BASE_URL } from "../../constant/api";
-import Button from "react-bootstrap/Button";
 import EnquiryModal from "../enquiries/EnquiryModal";
+
+const HotelLink = {
+  textDecoration: "none",
+};
 
 const Hotels = ({ hotels }) => {
   console.log(hotels);
@@ -25,16 +28,13 @@ const Hotels = ({ hotels }) => {
                     <Card.Body>
                       {" "}
                       <Card.Text className="h3">
-                        {hotel.attributes.name}
+                        <Link style={HotelLink} href={`detail/${hotel.id}`}>
+                          <a>{hotel.attributes.name}</a>
+                        </Link>
                       </Card.Text>
                       <Card.Text className="p">
-                        <Link
-                          href={{
-                            pathname: `${BASE_URL}`,
-                            query: `${hotel.id}`,
-                          }}
-                        >
-                          Read more
+                        <Link href={`detail/${hotel.id}`}>
+                          <a>Read more</a>
                         </Link>
                       </Card.Text>
                       <Col className="text-end">

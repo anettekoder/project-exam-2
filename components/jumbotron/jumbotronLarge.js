@@ -6,11 +6,14 @@ import Col from "react-bootstrap/Col";
 import Header1 from "../../assets/images/headers/header1.jpg";
 import SearchInput from "../search/search";
 import Heading from "../heading";
+import Searchbar from "../search/search";
 
 // Jumbotron for landingpage - tablet devices
 // In Container
 
-const JumbotronLarge = () => {
+export default function JumbotronLarge({ hotels }) {
+  const hotelNames = hotels && hotels.data.map((hotel) => hotel.nam);
+
   return (
     <>
       <div className="jumbotron shadow-lg mb-5 bg-black ">
@@ -24,14 +27,14 @@ const JumbotronLarge = () => {
               Find your accommodation with us now, and stay safely and
               offordable.
             </h2>
-            <SearchInput />
+            <SearchInput hotelNames={hotelNames} />
           </div>
         </div>
       </div>
       <Container fluid>
         <Col className="d-block d-md-none d-lg-none">
           <Row className="bg-secondary h-25 d-flex">
-            <SearchInput />
+            <Searchbar />
           </Row>
           <Row className="pb-5">
             <Image src={Header1} />
@@ -46,6 +49,21 @@ const JumbotronLarge = () => {
       </Container>
     </>
   );
-};
+}
 
-export default JumbotronLarge;
+export async function getServerSideProps() {
+  let hotels = [];
+
+  try {
+    const response = await fetch(BASE_URL + "?populate=*");
+    hotels = await response.json();
+  } catch (error) {
+    console.log(error);
+  }
+
+  return {
+    props: {
+      hotels: hotels,
+    },
+  };
+}
