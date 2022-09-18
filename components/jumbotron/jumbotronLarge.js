@@ -11,9 +11,7 @@ import Searchbar from "../search/search";
 // Jumbotron for landingpage - tablet devices
 // In Container
 
-export default function JumbotronLarge({ hotels }) {
-  const hotelNames = hotels && hotels.data.map((hotel) => hotel.nam);
-
+export default function JumbotronLarge() {
   return (
     <>
       <div className="jumbotron shadow-lg mb-5 bg-black ">
@@ -27,15 +25,12 @@ export default function JumbotronLarge({ hotels }) {
               Find your accommodation with us now, and stay safely and
               offordable.
             </h2>
-            <SearchInput hotelNames={hotelNames} />
           </div>
         </div>
       </div>
       <Container fluid>
         <Col className="d-block d-md-none d-lg-none">
-          <Row className="bg-secondary h-25 d-flex">
-            <Searchbar />
-          </Row>
+          <Row className="bg-secondary h-25 d-flex"></Row>
           <Row className="pb-5">
             <Image src={Header1} />
           </Row>
@@ -49,21 +44,4 @@ export default function JumbotronLarge({ hotels }) {
       </Container>
     </>
   );
-}
-
-export async function getServerSideProps() {
-  let hotels = [];
-
-  try {
-    const response = await fetch(BASE_URL + "?populate=*");
-    hotels = await response.json();
-  } catch (error) {
-    console.log(error);
-  }
-
-  return {
-    props: {
-      hotels: hotels,
-    },
-  };
 }

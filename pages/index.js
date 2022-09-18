@@ -1,10 +1,12 @@
 import Head from "next/head";
-import Heading from "../components/heading";
+// import Heading from "../components/heading";
 import AmusementsCards from "../components/cards/amusements";
 import JumbotronLarge from "../components/jumbotron/jumbotronLarge";
 import { BASE_URL } from "../constant/api";
+import Searchbar from "../components/search/search";
 
 export default function Home({ hotels }) {
+  const hotelNames = hotels.map((hotel) => hotel.name);
   return (
     <div>
       <Head>
@@ -19,7 +21,7 @@ export default function Home({ hotels }) {
 
       <main>
         <JumbotronLarge />
-
+        <Searchbar hotelNames={hotelNames} />
         <AmusementsCards />
       </main>
     </div>
@@ -30,11 +32,15 @@ export async function getServerSideProps() {
   let hotels = [];
 
   try {
-    const response = await fetch(BASE_URL + "?populate=*");
-    hotels = await response.json();
+    const response = await axios.get(BASE_URL + "accomodations/?populate=*");
+    hotels = response.data;
   } catch (error) {
     console.log(error);
   }
 
-  return { props: { hotels } };
+  return {
+    props: {
+      hotels: hotels,
+    },
+  };
 }

@@ -58,58 +58,16 @@ export default class Searchbar extends React.Component {
   render() {
     const { text } = this.state;
     return (
-      <div className="w-full md:w-2/4 xl:w-full mb-11">
+      <div className="">
         <input
-          className="bg-gray-100 text-black border-black border-2 placeholder-black pl-5 font-heading h-12 lg:h-14 focus:border-black focus:ring-black w-full"
+          className=""
           onChange={this.onTextChange}
           value={text}
           type="text"
-          placeholder="Search..."
+          placeholder="Search for hotel"
         />
         {this.renderSuggestions()}
       </div>
     );
   }
 }
-
-// const SearchInput = () => {
-//   return (
-//     <div className="search-box">
-//       <InputGroup size="lg">
-//         <Container className="py-5">
-//           <Row className="g-0">
-//             <Col xs="12" md="6" className="m-0">
-//               <Form.Control
-//                 id="search-bar"
-//                 className="pl-2 py-3"
-//                 size="lg"
-//                 aria-label="Small"
-//                 aria-describedby="inputGroup-sizing-sm"
-//                 placeholder="Search for accomandations"
-//               />
-//             </Col>
-//             <Col xs="12" md="6">
-//               <CustomButton content="Search" />
-//             </Col>
-//           </Row>
-//         </Container>
-//       </InputGroup>
-//     </div>
-//   );
-// };
-
-// export default SearchInput;
-
-// //Fetch hotels
-// export async function getServerSideProps() {
-//   let hotels = [];
-
-//   try {
-//     const response = await fetch(BASE_URL + "?populate=*");
-//     hotels = await response.json();
-//   } catch (error) {
-//     console.log(error);
-//   }
-
-//   return { props: { hotels } };
-// }

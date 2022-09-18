@@ -13,7 +13,7 @@ const schema = yup.object().shape({
   password: yup.string().required("Please enter your password"),
 });
 
-export default function LoginForm() {
+function LoginForm() {
   const [submitting, setSubmitting] = useState(false);
   const [loginError, setLoginError] = useState(null);
   const router = useRouter();
@@ -29,7 +29,7 @@ export default function LoginForm() {
     setLoginError(null);
 
     try {
-      const response = await axios.post(BASE_URL + "/auth/local", data);
+      const response = await axios.post(BASE_URL + "auth/local", data);
       setAuth(response.data);
       router.push("/admin");
     } catch (error) {
@@ -94,6 +94,8 @@ export default function LoginForm() {
     </form>
   );
 }
+
+export default LoginForm;
 
 // import { useState } from "react";
 // import { useForm } from "react-hook-form";
