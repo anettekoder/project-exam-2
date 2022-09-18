@@ -34,7 +34,7 @@ export async function getServerSideProps() {
   let hotels = [];
 
   try {
-    const response = await fetch(BASE_URL + "?populate=*");
+    const response = await fetch(BASE_URL + "accomodations/?populate=*");
     hotels = await response.json();
   } catch (error) {
     console.log(error);

@@ -52,7 +52,7 @@ export default function LoginForm() {
   }
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-6">
+      <form onSubmit={handleSubmit(onSubmit)} className="px-5">
         {loginError && (
           <FormError>{"Username or password is uncorrect"}</FormError>
         )}
@@ -62,7 +62,7 @@ export default function LoginForm() {
               name="username"
               {...register("username", { required: true })}
               placeholder="Username"
-              className="appearance-none rounded-none relative block w-full my-2 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+              className="appearance-none rounded-none relative block w-full my-2 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900   sm:text-sm"
             />
             {errors?.username && (
               <FormError>{errors.username.message}</FormError>
@@ -75,13 +75,13 @@ export default function LoginForm() {
               placeholder="Password"
               {...register("password")}
               type="password"
-              className="appearance-none rounded-none relative block w-full my-2 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+              className="appearance-none rounded-none relative block w-full my-2 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  sm:text-sm"
             />
             {errors?.password && (
               <FormError>{errors.password.message}</FormError>
             )}
           </div>
-          <button className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium  text-white bg-blue-500 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <button className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium">
             {submitting ? "Loggin in..." : "Login"}
           </button>
         </fieldset>

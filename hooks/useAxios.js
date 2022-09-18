@@ -1,7 +1,7 @@
 import { useContext } from "react-bootstrap";
 import axios from "axios";
 import AuthContext from "../context/AuthContext";
-import { BASE_URL } from "../../constant/api";
+import { BASE_URL } from "../constant/api";
 
 const url = BASE_URL;
 
