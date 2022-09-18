@@ -58,7 +58,7 @@ export default class Searchbar extends React.Component {
   render() {
     const { text } = this.state;
     return (
-      <div className="">
+      <div className="text-center">
         <input
           className=""
           onChange={this.onTextChange}

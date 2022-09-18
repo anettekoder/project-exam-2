@@ -39,10 +39,9 @@ export default function LoginForm() {
       console.log("response", response.data);
 
       if (response.data.jwt) {
+        setUser({ name: response.data.user_display_name });
         router.push("/admin");
       }
-
-      setUser({ name: response.data.user_display_name });
     } catch (error) {
       console.log("error", error);
       setLoginError(error.toString());
@@ -59,13 +58,13 @@ export default function LoginForm() {
         <fieldset disabled={submitting}>
           <div>
             <input
-              name="username"
-              {...register("username", { required: true })}
+              name="identifier"
+              {...register("identifier", { required: true })}
               placeholder="Username"
               className="appearance-none rounded-none relative block w-full my-2 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900   sm:text-sm"
             />
-            {errors?.username && (
-              <FormError>{errors.username.message}</FormError>
+            {errors?.identifier && (
+              <FormError>{errors.identifier.message}</FormError>
             )}
           </div>
 
