@@ -112,7 +112,7 @@ import { useContext } from "react";
 const url = BASE_URL + TOKEN_PATH;
 
 const schema = yup.object().shape({
-  username: yup.string().required("Please enter your username"),
+  identifier: yup.string().required("Please enter your username"),
   password: yup.string().required("Please enter your password"),
 });
 
