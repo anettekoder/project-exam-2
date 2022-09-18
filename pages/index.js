@@ -1,4 +1,5 @@
 import Head from "next/head";
+import axios from "axios";
 // import Heading from "../components/heading";
 import AmusementsCards from "../components/cards/amusements";
 import JumbotronLarge from "../components/jumbotron/jumbotronLarge";
