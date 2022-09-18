@@ -61,9 +61,9 @@ export default function LoginForm() {
             placeholder="Username"
             ref={register}
           />
-          <span className="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300 bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3"></span>
+          <span className="z-10 h-full  font-normal absolute text-center  text-base items-center justify-center w-8 right-0 pr-3 py-3"></span>
           {errors.identifier && (
-            <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">
+            <span className="text-center p-1 mb-5 w-full  border-2">
               {errors.identifier.message}
             </span>
           )}
