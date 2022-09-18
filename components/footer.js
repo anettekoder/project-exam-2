@@ -6,6 +6,10 @@ import Link from "next/link";
 import InstagramLogo from "../assets/logo/instagram.svg";
 import { menuLinks } from "./header";
 
+const LinkStyle = {
+  color: "#fff",
+};
+
 const MenuItem = ({ title, path }) => {
   const router = useRouter();
 
@@ -44,7 +48,9 @@ const Footer = () => {
           <InstagramLogo width={30} height={30} />
         </Col>
         <Col xs={12} md={{ span: 4, order: "last" }} className="p ">
-          Log in Admin
+          <Link href={"/logIn"}>
+            <a style={LinkStyle}> Log in Admin</a>
+          </Link>
         </Col>
       </Row>
       <Row>
