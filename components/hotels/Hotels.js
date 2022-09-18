@@ -17,12 +17,17 @@ const Hotels = ({ hotels }) => {
     <>
       <Row xs={1} md={2} className="g-4">
         {hotels &&
-          hotels.data.map((hotel) => {
+          hotels.data.map((hotel, h, i) => {
             return (
               <div key={hotel.id}>
                 <Col>
                   <Card className="mx-5 mb-5 hotel-list">
-                    <Card.Img as={Image} src={Header2} alt="image" />
+                    <Card.Img
+                      as={Image}
+                      key={i}
+                      src={h.attributes.images.data[0].attributes.url}
+                      alt="image"
+                    />
 
                     <Card.Body>
                       {" "}

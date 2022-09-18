@@ -1,0 +1,7 @@
+@use "variables" as v;
+
+.search-list {
+    list-style-type: none;
+        border: none !important;
+        background: v.$grey  !important;
+}

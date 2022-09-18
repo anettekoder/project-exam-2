@@ -1,13 +1,12 @@
 import Head from "next/head";
 import axios from "axios";
-// import Heading from "../components/heading";
 import AmusementsCards from "../components/cards/amusements";
 import JumbotronLarge from "../components/jumbotron/jumbotronLarge";
 import { BASE_URL } from "../constant/api";
 import Searchbar from "../components/search/search";
 
 export default function Home({ hotels }) {
-  const hotelNames = hotels.map((hotel) => hotel.name);
+  const hotelNames = hotels?.map((hotel) => hotel.attributes.name);
   return (
     <div>
       <Head>
@@ -34,7 +33,7 @@ export async function getServerSideProps() {
 
   try {
     const response = await axios.get(BASE_URL + "accomodations/?populate=*");
-    hotels = response.data;
+    hotels = response.data.data;
   } catch (error) {
     console.log(error);
   }

@@ -2,6 +2,7 @@
 const nextConfig = {
   images: {
     domains: ["https://strapi-holidaze-exam.herokuapp.com/"],
+    domains: ["res.cloudinary.com"],
   },
   reactStrictMode: true,
   swcMinify: true,

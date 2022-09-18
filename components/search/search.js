@@ -4,8 +4,12 @@
 // import Col from "react-bootstrap/Col";
 // import Container from "react-bootstrap/Container";
 // import CustomButton from "../button";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+import ListGroup from "react-bootstrap/ListGroup";
 import React from "react";
 import Link from "next/link";
+import { Col, Container, ListGroupItem, Row } from "react-bootstrap";
 
 export default class Searchbar extends React.Component {
   constructor(props) {
@@ -18,7 +22,7 @@ export default class Searchbar extends React.Component {
 
   onTextChange = (e) => {
     const { hotelNames } = this.props;
-    console.log(hotelNames);
+
     let suggestions = [];
     const value = e.target.value;
     if (value.length > 0) {
@@ -45,29 +49,41 @@ export default class Searchbar extends React.Component {
       return null;
     }
     return (
-      <ul className="w-full bg-gray-200 p-3 text-black">
-        {suggestions.map((hotel) => (
-          <li key={hotel} onClick={(e) => this.suggestionsSelected(hotel)}>
-            {<Link href={"/booking"}>{hotel}</Link>}
-          </li>
-        ))}
-      </ul>
+      <Col xs={12}>
+        <ListGroup variant="flush">
+          {suggestions.map((hotel) => (
+            <ListGroupItem
+              key={hotel}
+              onClick={(e) => this.suggestionsSelected(hotel)}
+            >
+              {<Link href={`detail/${hotel.id}`}>{hotel}</Link>}
+            </ListGroupItem>
+          ))}
+        </ListGroup>
+      </Col>
     );
   };
 
   render() {
     const { text } = this.state;
     return (
-      <div className="text-center">
-        <input
-          className=""
-          onChange={this.onTextChange}
-          value={text}
-          type="text"
-          placeholder="Search for hotel"
-        />
-        {this.renderSuggestions()}
-      </div>
+      <Container className="text-left">
+        <Row>
+          <Col xs={12}>
+            <InputGroup size="lg">
+              <Form.Control
+                aria-label="Large"
+                aria-describedby="inputGroup-sizing-sm"
+                onChange={this.onTextChange}
+                value={text}
+                type="text"
+                placeholder="Search for hotel"
+              />
+              {this.renderSuggestions()}
+            </InputGroup>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
