@@ -38,7 +38,7 @@ export default function LoginForm() {
       const response = await axios.post(url, data);
       console.log("response", response.data);
 
-      if (response.data.token) {
+      if (response.data.jwt) {
         router.push("/admin");
       }
 
