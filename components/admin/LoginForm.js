@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import axios from "axios";
@@ -8,7 +8,6 @@ import FormError from "./FormError";
 import { BASE_URL, TOKEN_PATH } from "../../constant/api";
 
 import AuthContext from "../../context/AuthContext";
-import { useContext } from "react";
 
 const url = BASE_URL + TOKEN_PATH;
 
