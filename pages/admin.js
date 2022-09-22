@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import useAxios from "../hooks/useAxios";
 import AdminEnquiries from "../components/admin/AdminEnquiries";
-import AdminMessages from "../components/admin/AdminMessages";
+// import AdminMessages from "../components/admin/AdminMessages";
 import Heading from "../components/heading";
 
 export default function Admin() {
@@ -43,7 +43,7 @@ export default function Admin() {
 
   return (
     <>
-      <div className="flex justify-center items-center flex-col">
+      <div className="">
         <Head>
           <title>Holidaze | Admin Page</title>
           <link rel="icon" href="/favicon.ico" />
@@ -52,25 +52,20 @@ export default function Admin() {
             content="width=device-width, initial-scale=1"
           ></meta>
         </Head>
-        <div className="w-11/12 md:w-10/12">
+        <div className="">
           <Heading headingText="Admin page" subHeadingText="" />
-          <div className="flex w-full justify-center lg:justify-end items-center mb-7 font-heading text-xl lg:text-2xl">
-            <div className="flex justify-center items-center hover:text-greenColor transition ease-out duration-500 border-b-2 border-greenColor border-opacity-0 hover:border-opacity-100">
+          <div className="">
+            <div className="">
               {/* <Link href="/newHotel">Add New Hotel</Link> */}
             </div>
           </div>
         </div>
-        <div className="mb-10 w-11/12 md:w-10/12">
+        <div className="mb-10 ">
           <AdminEnquiries enquiries={enquiries} />
         </div>
-        <div className="w-11/12 md:w-10/12">
-          <AdminMessages messages={messages} />
-        </div>
-        <div className="flex justify-center md:justify-end items-center w-11/12 md:w-10/12 my-10 font-heading text-xl md:text-2xl mr-2">
-          <button
-            onClick={logout}
-            className="flex justify-center items-center transition ease-out duration-500 border-b-2 border-red-600 border-opacity-0 hover:border-opacity-100 hover:text-red-600"
-          >
+        <div className="">{/* <AdminMessages messages={messages} /> */}</div>
+        <div className="flex justify-center">
+          <button onClick={logout} className="flex justify-center">
             Log out
           </button>
         </div>
