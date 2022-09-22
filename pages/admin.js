@@ -14,6 +14,7 @@ export default function Admin() {
   const [auth, setAuth] = useContext(AuthContext);
   const [enquiries, setEnquiries] = useState([]);
   // const [messages, setMessages] = useState([]);
+
   function logout() {
     setAuth(null);
     router.push("/");
