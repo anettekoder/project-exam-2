@@ -37,48 +37,50 @@ function AdminEnquiries({ enquiries }) {
             </div>
           </div>
           <div className="text-white flex flex-col w-full md:table-row-group font-paragraph">
-            {enquiries.map((enquiry, i) => {
-              return (
-                <div
-                  key={enquiry.id}
-                  onClick={() => toggle(i)}
-                  className="flex flex-wrap justify-between items-center md:table-row bg-blue-600 odd:bg-blue-500 lg:hover:bg-blue-400"
-                >
-                  <div className="md:table-cell px-2 py-4 w-1/3 sm:w-1/2 md:w-1/4">
-                    {enquiry.hotel}
-                  </div>
-                  <Moment
-                    format="DD/MM/YYYY"
-                    className="md:table-cell text-center sm:text-left px-2 py-4 w-1/3 sm:w-1/4"
-                  >
-                    {enquiry.from}
-                  </Moment>
-                  <Moment
-                    format="DD/MM/YYYY"
-                    className="md:table-cell px-2 py-4 w-1/3 sm:w-1/4"
-                  >
-                    {enquiry.to}
-                  </Moment>
-                  <div className="px-2 py-4 w-20 md:w-1/2 hidden md:table-cell">
-                    {enquiry.name}
-                  </div>
-                  <div className="px-2 py-4 md:w-1/2 hidden md:table-cell">
-                    {enquiry.email}
-                  </div>
+            {enquiries &&
+              enquiries.data?.map((enquiry, i) => {
+                return (
                   <div
-                    className={
-                      selected == i
-                        ? "w-full block md:hidden"
-                        : "w-full hidden md:hidden"
-                    }
+                    key={enquiry.id}
+                    onClick={() => toggle(i)}
+                    className="flex flex-wrap justify-between items-center md:table-row bg-blue-600 odd:bg-blue-500 lg:hover:bg-blue-400"
                   >
-                    <div className="w-11/12 h-0.5 bg-white mx-auto"></div>
-                    <div className="p-2 w-1/2">{enquiry.name}</div>
-                    <div className="p-2 w-1/4">{enquiry.email}</div>
+                    <div className="md:table-cell px-2 py-4 w-1/3 sm:w-1/2 md:w-1/4">
+                      {enquiry.hotel}
+                    </div>
+
+                    <Moment
+                      format="DD/MM/YYYY"
+                      className="md:table-cell text-center sm:text-left px-2 py-4 w-1/3 sm:w-1/4"
+                    >
+                      {enquiry.from}
+                    </Moment>
+                    <Moment
+                      format="DD/MM/YYYY"
+                      className="md:table-cell px-2 py-4 w-1/3 sm:w-1/4"
+                    >
+                      {enquiry.to}
+                    </Moment>
+                    <div className="px-2 py-4 w-20 md:w-1/2 hidden md:table-cell">
+                      {enquiry.name}
+                    </div>
+                    <div className="px-2 py-4 md:w-1/2 hidden md:table-cell">
+                      {enquiry.email}
+                    </div>
+                    <div
+                      className={
+                        selected == i
+                          ? "w-full block md:hidden"
+                          : "w-full hidden md:hidden"
+                      }
+                    >
+                      <div className="w-11/12 h-0.5 bg-white mx-auto"></div>
+                      <div className="p-2 w-1/2">{enquiry.name}</div>
+                      <div className="p-2 w-1/4">{enquiry.email}</div>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
           </div>
         </div>
       </div>

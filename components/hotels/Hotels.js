@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "next/image";
 import Header2 from "../../assets/images/headers/header2.jpg";
-import { BASE_URL } from "../../constant/api";
+// import { BASE_URL } from "../../constant/api";
 import EnquiryModal from "../enquiries/EnquiryModal";
 
 const HotelLink = {
