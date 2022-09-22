@@ -18,7 +18,7 @@ export async function getStaticPaths() {
   }
 }
 export async function getStaticProps({ params }) {
-  const url = `${BASE_URL}enquiries/${params.id}`;
+  const url = `${BASE_URL}accomodations/${params.id}`;
 
   let hotel = null;
 
