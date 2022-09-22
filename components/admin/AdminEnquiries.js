@@ -20,10 +20,9 @@ function AdminEnquiries({ enquiries }) {
       </div>
 
       <Table striped bordered hover>
-        {/* <div className="flex md:table w-full"> */}
         <thead>
           <tr>
-            {/* <th>Hotel</th> */}
+            <th>Hotel</th>
             <th>From</th>
             <th>To</th>
             <th>Name</th>
@@ -35,52 +34,26 @@ function AdminEnquiries({ enquiries }) {
           {enquiries &&
             enquiries.data?.map((enquiry, i) => {
               return (
-                <tr
-                  key={enquiry.attributes.id}
-                  onClick={() => toggle(i)}
-                  // className="flex flex-wrap justify-between items-center md:table-row bg-blue-600 odd:bg-blue-500 lg:hover:bg-blue-400"
-                >
+                <tr key={enquiry.attributes.id}>
                   <td>{enquiry.attributes.hotel}</td>
 
                   <td>
-                    <Moment
-                      format="DD/MM/YYYY"
-                      // className="md:table-cell text-center sm:text-left px-2 py-4 w-1/3 sm:w-1/4"
-                    >
+                    <Moment format="DD/MM/YYYY">
                       {enquiry.attributes.from}
                     </Moment>
                   </td>
 
                   <td>
-                    <Moment
-                      format="DD/MM/YYYY"
-                      // className="md:table-cell px-2 py-4 w-1/3 sm:w-1/4"
-                    >
-                      {enquiry.to}
-                    </Moment>
+                    <Moment format="DD/MM/YYYY">{enquiry.to}</Moment>
                   </td>
 
                   <td>{enquiry.attributes.name}</td>
 
                   <td>{enquiry.attributes.email}</td>
-
-                  {/* <div
-                        className={
-                          selected == i
-                            ? "w-full block md:hidden"
-                            : "w-full hidden md:hidden"
-                        }
-                      >
-                        <div className="w-11/12 h-0.5 bg-white mx-auto"></div>
-                        <div>{enquiry.attributes.name}</div>
-                        <div>{enquiry.attributes.email}</div>
-                      </div> */}
                 </tr>
               );
             })}
         </tdbody>
-
-        {/* </div> */}
       </Table>
     </>
   );

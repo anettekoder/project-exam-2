@@ -42,7 +42,7 @@ const Hotels = ({ hotels }) => {
                           NOK {hotel.attributes.price},-
                         </p>
                         <div className="d-flex justify-content-end">
-                          <EnquiryModal />
+                          <EnquiryModal hotelName={hotel.attributes.name} />
                         </div>
                       </Col>
                     </Card.Body>
