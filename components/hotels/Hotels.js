@@ -22,12 +22,7 @@ const Hotels = ({ hotels }) => {
               <div key={hotel.id}>
                 <Col>
                   <Card className="mx-5 mb-5 hotel-list">
-                    <Card.Img
-                      as={Image}
-                      key={i}
-                      src={h.attributes.images.data[0].attributes.url}
-                      alt="image"
-                    />
+                    <Card.Img as={Image} key={i} src={Header2} alt="image" />
 
                     <Card.Body>
                       {" "}

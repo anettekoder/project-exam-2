@@ -2,6 +2,7 @@ import Head from "next/head";
 import Heading from "../components/heading";
 import JumbotronSmall from "../components/jumbotron/jumbotronSmall";
 import Header3 from "../assets/images/headers/header3.jpg";
+// import ContactForm from "../components/contact/contactForm";
 
 export default function Booking() {
   return (
@@ -15,9 +16,7 @@ export default function Booking() {
       <main>
         <JumbotronSmall imgPath={Header3} />
         <Heading headingText="Contact" />
-        <h2>This is a sub-header</h2>
-        <h3>Sub-header number 3</h3>
-        <p>Lorem ipsum shdfhskjdhfkjshdfkjsahdkjfhksjdahkhsdfjdsk</p>
+        {/* <ContactForm /> */}
       </main>
     </div>
   );

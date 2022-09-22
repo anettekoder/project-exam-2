@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { DateRange } from "react-date-range";
+import EnquiryForm from "./EnquiryForm";
 
 const btnStyle = {
   backgroundColor: "#001C55",
   color: "#ffff",
 };
 
-function EnquiryModal() {
+function EnquiryModal({ hotelName }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -38,19 +38,8 @@ function EnquiryModal() {
           <Modal.Title>Booking</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <DateRange
-            editableDateInputs={true}
-            onChange={(item) => setState([item.selection])}
-            moveRangeOnFirstSelection={false}
-            ranges={state}
-          />
+          <EnquiryForm hotelName={hotelName} />
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary">Book reservation</Button>
-        </Modal.Footer>
       </Modal>
     </>
   );
