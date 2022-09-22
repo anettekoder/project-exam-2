@@ -14,11 +14,6 @@ export default function Admin() {
   const [auth, setAuth] = useContext(AuthContext);
   const [enquiries, setEnquiries] = useState([]);
   // const [messages, setMessages] = useState([]);
-
-  if (auth === null) {
-    router.push("/");
-  }
-
   function logout() {
     setAuth(null);
     router.push("/");
@@ -27,6 +22,10 @@ export default function Admin() {
   const http = useAxios();
 
   useEffect(function () {
+    if (auth === null) {
+      router.push("/");
+    }
+
     async function getData() {
       try {
         const enquiriesResponse = await http.get("/enquiries");
