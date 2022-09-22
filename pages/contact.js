@@ -4,7 +4,7 @@ import JumbotronSmall from "../components/jumbotron/jumbotronSmall";
 import Header3 from "../assets/images/headers/header3.jpg";
 // import ContactForm from "../components/contact/contactForm";
 
-export default function Booking() {
+export default function Contact() {
   return (
     <div>
       <Head>

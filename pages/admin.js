@@ -8,12 +8,12 @@ import AdminEnquiries from "../components/admin/AdminEnquiries";
 import AdminMessages from "../components/admin/AdminMessages";
 import Heading from "../components/heading";
 
-export default function admin() {
+export default function Admin() {
   const router = useRouter();
 
   const [auth, setAuth] = useContext(AuthContext);
   const [enquiries, setEnquiries] = useState([]);
-  const [messages, setMessages] = useState([]);
+  // const [messages, setMessages] = useState([]);
 
   if (auth === null) {
     router.push("/");
@@ -31,8 +31,8 @@ export default function admin() {
       try {
         const enquiriesResponse = await http.get("/enquiries");
         setEnquiries(enquiriesResponse.data);
-        const messagesResponse = await http.get("/messages");
-        setMessages(messagesResponse.data);
+        // const messagesResponse = await http.get("/messages");
+        // setMessages(messagesResponse.data);
       } catch (error) {
         console.log(error);
       }
