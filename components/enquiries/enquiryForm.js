@@ -44,7 +44,7 @@ function EnquiryForm({ hotelName }) {
     console.log(data);
 
     try {
-      const response = await axios.post(BASE_URL + "/enquiries/", data);
+      const response = await axios.post(BASE_URL + "enquiries/", { data });
       console.log("response", response.data);
       setSubmitSuccess("Thank you for your booking!");
     } catch (error) {
@@ -134,6 +134,7 @@ function EnquiryForm({ hotelName }) {
           </div>
 
           <Button
+            type="submit"
             variant="primary"
             className="w-64 h-12 text-white hover:text-greenColor text-xl bg-greenColor hover:bg-transparent border-greenColor border-2 tracking-widest transition ease-out duration-300"
           >
