@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
@@ -63,7 +62,7 @@ export default function Admin() {
         <div className="mb-10 ">
           <AdminEnquiries enquiries={enquiries} />
         </div>
-        <div className="">{/* <AdminMessages messages={messages} /> */}</div>
+        {/* <div className=""><AdminMessages messages={messages} /></div> */}
         <div className="flex justify-center">
           <button onClick={logout} className="flex justify-center">
             Log out
