@@ -27,7 +27,7 @@ const schema = yup.object().shape({
 });
 
 function AddHotelForm() {
-  //   const [auth, setAuth] = useContext(AuthContext);
+  const [auth, setAuth] = useContext(AuthContext);
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState(null);
   const [submitSuccess, setSubmitSuccess] = useState(null);
@@ -52,12 +52,12 @@ function AddHotelForm() {
     formData.append(
       "data",
       JSON.stringify({
-        name: data.attributes.name,
-        price: data.attributes.price,
-        description: data.attributes.description,
+        name: data.name,
+        price: data.price,
+        description: data.description,
       })
     );
-    formData.append("files.attributes.image", file);
+    formData.append("files.image", file);
 
     try {
       const response = await http.post(BASE_URL + "accomodations/?populate=*", {
@@ -78,7 +78,7 @@ function AddHotelForm() {
       ) : (
         <Form
           onSubmit={handleSubmit(onSubmit)}
-          //   disabled={submitting}
+          disabled={submitting}
           className="flex flex-col w-72 md:w-9/12 lg:w-1/2 lg:my-10"
         >
           {serverError && (
@@ -92,7 +92,7 @@ function AddHotelForm() {
               type="text"
               name="name"
               placeholder="Hotel name "
-              {...register("hotel", { required: true })}
+              {...register("name", { required: true })}
             />
             {errors?.name && (
               <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">

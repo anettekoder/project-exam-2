@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "next/image";
 import Header2 from "../../assets/images/headers/header2.jpg";
-// import { BASE_URL } from "../../constant/api";
+import { BASE_URL } from "../../constant/api";
 import EnquiryModal from "../enquiries/EnquiryModal";
 
 const HotelLink = {
@@ -17,12 +17,26 @@ const Hotels = ({ hotels }) => {
     <>
       <Row xs={1} md={2} className="g-4">
         {hotels &&
-          hotels.data.map((hotel, h, i) => {
+          hotels.data?.map((hotel, h, i) => {
             return (
               <div key={hotel.id}>
                 <Col>
                   <Card className="mx-5 mb-5 hotel-list">
-                    <Card.Img as={Image} key={i} src={Header2} alt="image" />
+                    {/* {hotel.attributes.assets.data?.map((item, id) => {
+                      return (
+                        <div>
+                          <div key={id}>
+                            <Card.Img
+                              as={Image}
+                              src={
+                                BASE_URL + item.attributes.formats.medium.url
+                              }
+                              alt="image"
+                            />
+                          </div>
+                        </div>
+                      );
+                    })} */}
 
                     <Card.Body>
                       {" "}
