@@ -57,9 +57,7 @@ function EnquiryForm({ hotelName }) {
 
   return (
     <>
-      {submitSuccess && (
-        <span className="text-center py-20 text-2xl">{submitSuccess}</span>
-      )}
+      {submitSuccess && <span>{submitSuccess}</span>}
       {submitSuccess ? (
         ""
       ) : (

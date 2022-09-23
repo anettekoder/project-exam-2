@@ -60,7 +60,9 @@ function AddHotelForm() {
     formData.append("files.attributes.image", file);
 
     try {
-      const response = await http.post(BASE_URL + "enquiries/", formData);
+      const response = await http.post(BASE_URL + "accomodations/?populate=*", {
+        formData,
+      });
       console.log("data", response.data);
       setSubmitSuccess("Hotel Added!");
     } catch (error) {
@@ -69,18 +71,14 @@ function AddHotelForm() {
   }
 
   return (
-    <div className="w-full flex flex-col justify-center items-center mb-24">
-      {submitSuccess && (
-        <span className="text-center lg:h-80 py-20 lg:my-32 text-2xl w-full mb-5">
-          {submitSuccess}
-        </span>
-      )}
+    <>
+      {submitSuccess && <span>{submitSuccess}</span>}
       {submitSuccess ? (
         ""
       ) : (
         <Form
           onSubmit={handleSubmit(onSubmit)}
-          disabled={submitting}
+          //   disabled={submitting}
           className="flex flex-col w-72 md:w-9/12 lg:w-1/2 lg:my-10"
         >
           {serverError && (
@@ -94,7 +92,7 @@ function AddHotelForm() {
               type="text"
               name="name"
               placeholder="Hotel name "
-              {...register}
+              {...register("hotel", { required: true })}
             />
             {errors?.name && (
               <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">
@@ -106,36 +104,36 @@ function AddHotelForm() {
               type="text"
               name="price"
               placeholder="Price *"
-              {...register}
+              {...register("price", { required: true })}
             />
             {errors?.price && (
               <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">
                 {errors.price.message}
               </span>
             )}
-            <div className="flex flex-col">
-              <Form.Label>Upload image</Form.Label>
-              <Form.Control
-                className="w-full md:text-xl md:h-14 mt-2 mb-5"
-                onChange={handleChange}
-                type="file"
-                accept="image/*"
-                name="image"
-                {...register}
-              />
-              {errors?.image && (
-                <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">
-                  {errors.image.message}
-                </span>
-              )}
-            </div>
+
+            <Form.Label>Upload image</Form.Label>
+            <Form.Control
+              className="w-full md:text-xl md:h-14 mt-2 mb-5"
+              onChange={handleChange}
+              type="file"
+              accept="image/*"
+              name="image"
+              {...register("image", { required: true })}
+            />
+            {errors?.image && (
+              <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">
+                {errors.image.message}
+              </span>
+            )}
+
             <Form.Control
               as="textarea"
               rows={3}
               type="text"
               name="description"
               placeholder="Description *"
-              {...register}
+              {...register("description", { required: true })}
             />
 
             {errors?.description && (
@@ -149,7 +147,7 @@ function AddHotelForm() {
           </Form.Group>
         </Form>
       )}
-    </div>
+    </>
   );
 }
 
