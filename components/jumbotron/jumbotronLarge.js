@@ -18,7 +18,7 @@ export default function JumbotronLarge() {
         <div className="overlay">
           <div className="jumbotron-inner">
             <Heading
-              headingText="Holidaze is a service for booking hotels, apartments and B&B in
+              landingPageHeading="Holidaze is a service for booking hotels, apartments and B&B in
               Bergen."
             />
             <h2 className="h2 .d-none d-md-block d-lg-block">
@@ -35,10 +35,10 @@ export default function JumbotronLarge() {
             <Image src={Header1} />
           </Row>
           <Row>
-            <Heading
-              headingText="Holidaze is a service for booking hotels, apartments and B&B in
-              Bergen."
-            />
+            <h1 className="text-center pb-5">
+              Holidaze is a service for booking hotels, apartments and B&B in
+              Bergen.
+            </h1>
           </Row>
         </Col>
       </Container>

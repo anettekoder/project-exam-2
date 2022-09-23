@@ -6,8 +6,10 @@ import useAxios from "../hooks/useAxios";
 import AdminEnquiries from "../components/admin/AdminEnquiries";
 import AdminMessages from "../components/admin/AdminMessages";
 import Heading from "../components/heading";
+import { Button } from "react-bootstrap";
+import { AddHotelModal } from "../components/admin/AddHotelModal";
 
-export default function Admin({}) {
+export default function Admin() {
   const router = useRouter();
 
   const [auth, setAuth] = useContext(AuthContext);
@@ -41,36 +43,34 @@ export default function Admin({}) {
   }, []);
 
   return (
-    <>
-      <div className="">
-        <Head>
-          <title>Holidaze | Admin Page</title>
-          <link rel="icon" href="/favicon.ico" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1"
-          ></meta>
-        </Head>
-        <div className="">
-          <Heading headingText="Admin page" subHeadingText="" />
-          <div className="">
-            <div className="">
-              {/* <Link href="/newHotel">Add New Hotel</Link> */}
-            </div>
-          </div>
-        </div>
-        <div className="mb-10 ">
+    <div className="mx-5">
+      <Head>
+        <title>Holidaze | Admin Page</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        ></meta>
+      </Head>
+      <main>
+        <div className="mt-5">
+          <Heading headingText="Admin page" />
+
           <AdminEnquiries enquiries={enquiries} />
-        </div>
-        <div className="">
+
           <AdminMessages messages={messages} />
-        </div>
-        <div className="">
-          <button onClick={logout} className="">
+
+          <Button
+            type="submit"
+            onClick={logout}
+            variant="secondary"
+            className="m-5"
+          >
             Log out
-          </button>
+          </Button>
+          <AddHotelModal />
         </div>
-      </div>
-    </>
+      </main>
+    </div>
   );
 }

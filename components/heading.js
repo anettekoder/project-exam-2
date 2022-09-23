@@ -1,9 +1,10 @@
-const Heading = ({ headingText, subHeadingText }) => {
+const Heading = ({ headingText, subHeadingText, landingPageHeading }) => {
   return (
     <>
-      <div className="mx-5">
-        <h1 className="h1 text-md-center">{headingText}</h1>
-        <h2 className="h2 text-md-center pb-5">{subHeadingText}</h2>
+      <div className="">
+        <div className="h1">{landingPageHeading}</div>
+        <div className="h1 text-center">{headingText}</div>
+        <div className="h2 text-md-center pb-5">{subHeadingText}</div>
       </div>
     </>
   );

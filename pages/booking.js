@@ -21,7 +21,7 @@ export default function Booking(props) {
         <div className="container">
           <Heading
             headingText="Book accommodation for your next trip."
-            subHeadingText="Experience Bergen's best hotels"
+            // subHeadingText="Experience Bergen's best hotels"
           />
         </div>
 

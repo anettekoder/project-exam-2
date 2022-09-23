@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Moment from "react-moment";
 import { Table } from "react-bootstrap";
 
@@ -14,12 +14,9 @@ function AdminEnquiries({ enquiries, hotelName }) {
   // };
 
   return (
-    <>
-      <div className="w-full font-heading border-b-2 border-black mb-5">
-        <h2 className="text-2xl md:text-3xl xl:text-4xl xl:pb-2">Enquiries</h2>
-      </div>
-
-      <Table striped bordered hover>
+    <div>
+      <h2 className="pb-3">Enquiries</h2>
+      <Table responsive striped bordered hover>
         <thead>
           <tr>
             <th>Hotel</th>
@@ -35,27 +32,35 @@ function AdminEnquiries({ enquiries, hotelName }) {
             enquiries.data?.map((enquiry, i) => {
               return (
                 <tr key={enquiry.attributes.id}>
-                  <td>{hotelName}</td>
+                  <td>
+                    <p>{hotelName}</p>
+                  </td>
 
                   <td>
                     <Moment format="DD/MM/YYYY">
-                      {enquiry.attributes.from}
+                      <p>{enquiry.attributes.from}</p>
                     </Moment>
                   </td>
 
                   <td>
-                    <Moment format="DD/MM/YYYY">{enquiry.attributes.to}</Moment>
+                    <Moment format="DD/MM/YYYY">
+                      <p>{enquiry.attributes.to}</p>
+                    </Moment>
                   </td>
 
-                  <td>{enquiry.attributes.name}</td>
+                  <td>
+                    <p>{enquiry.attributes.name}</p>
+                  </td>
 
-                  <td>{enquiry.attributes.email}</td>
+                  <td>
+                    <p>{enquiry.attributes.email}</p>
+                  </td>
                 </tr>
               );
             })}
         </tbody>
       </Table>
-    </>
+    </div>
   );
 }
 
