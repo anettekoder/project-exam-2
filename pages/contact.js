@@ -2,7 +2,7 @@ import Head from "next/head";
 import Heading from "../components/heading";
 import JumbotronSmall from "../components/jumbotron/jumbotronSmall";
 import Header3 from "../assets/images/headers/header3.jpg";
-// import ContactForm from "../components/contact/contactForm";
+import ContactForm from "../components/contact/contactForm";
 
 export default function Contact() {
   return (
@@ -16,7 +16,7 @@ export default function Contact() {
       <main>
         <JumbotronSmall imgPath={Header3} />
         <Heading headingText="Contact" />
-        {/* <ContactForm /> */}
+        <ContactForm />
       </main>
     </div>
   );

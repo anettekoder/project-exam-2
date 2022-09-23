@@ -75,6 +75,7 @@ function EnquiryForm({ hotelName }) {
           <input
             className="hidden"
             name="hotel"
+            type="text"
             defaultValue={hotelName}
             {...register("hotel", { required: true })}
           />

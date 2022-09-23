@@ -4,15 +4,15 @@ import { useContext, useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import useAxios from "../hooks/useAxios";
 import AdminEnquiries from "../components/admin/AdminEnquiries";
-// import AdminMessages from "../components/admin/AdminMessages";
+import AdminMessages from "../components/admin/AdminMessages";
 import Heading from "../components/heading";
 
-export default function Admin() {
+export default function Admin({}) {
   const router = useRouter();
 
   const [auth, setAuth] = useContext(AuthContext);
   const [enquiries, setEnquiries] = useState([]);
-  // const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([]);
 
   function logout() {
     setAuth(null);
@@ -30,8 +30,8 @@ export default function Admin() {
       try {
         const enquiriesResponse = await http.get("/enquiries");
         setEnquiries(enquiriesResponse.data);
-        // const messagesResponse = await http.get("/messages");
-        // setMessages(messagesResponse.data);
+        const messagesResponse = await http.get("/messages");
+        setMessages(messagesResponse.data);
       } catch (error) {
         console.log(error);
       }
@@ -62,9 +62,11 @@ export default function Admin() {
         <div className="mb-10 ">
           <AdminEnquiries enquiries={enquiries} />
         </div>
-        {/* <div className=""><AdminMessages messages={messages} /></div> */}
-        <div className="flex justify-center">
-          <button onClick={logout} className="flex justify-center">
+        <div className="">
+          <AdminMessages messages={messages} />
+        </div>
+        <div className="">
+          <button onClick={logout} className="">
             Log out
           </button>
         </div>

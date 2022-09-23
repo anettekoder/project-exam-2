@@ -2,16 +2,16 @@ import { useState } from "react";
 import Moment from "react-moment";
 import { Table } from "react-bootstrap";
 
-function AdminEnquiries({ enquiries }) {
-  const [selected, setSelected] = useState(null);
+function AdminEnquiries({ enquiries, hotelName }) {
+  // const [selected, setSelected] = useState(null);
 
-  const toggle = (i) => {
-    if (selected == i) {
-      return setSelected(null);
-    }
+  // const toggle = (i) => {
+  //   if (selected == i) {
+  //     return setSelected(null);
+  //   }
 
-    setSelected(i);
-  };
+  //   setSelected(i);
+  // };
 
   return (
     <>
@@ -30,12 +30,12 @@ function AdminEnquiries({ enquiries }) {
           </tr>
         </thead>
 
-        <tdbody>
+        <tbody>
           {enquiries &&
             enquiries.data?.map((enquiry, i) => {
               return (
                 <tr key={enquiry.attributes.id}>
-                  <td>{enquiry.attributes.hotel}</td>
+                  <td>{hotelName}</td>
 
                   <td>
                     <Moment format="DD/MM/YYYY">
@@ -44,7 +44,7 @@ function AdminEnquiries({ enquiries }) {
                   </td>
 
                   <td>
-                    <Moment format="DD/MM/YYYY">{enquiry.to}</Moment>
+                    <Moment format="DD/MM/YYYY">{enquiry.attributes.to}</Moment>
                   </td>
 
                   <td>{enquiry.attributes.name}</td>
@@ -53,7 +53,7 @@ function AdminEnquiries({ enquiries }) {
                 </tr>
               );
             })}
-        </tdbody>
+        </tbody>
       </Table>
     </>
   );
