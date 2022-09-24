@@ -3,19 +3,13 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "next/image";
-import Header2 from "../../assets/images/headers/header2.jpg";
-import { BASE_URL } from "../../constant/api";
 import EnquiryModal from "../enquiries/EnquiryModal";
 
 const HotelLink = {
   textDecoration: "none",
 };
-const response = fetch(
-  "https://strapi-holidaze-exam.herokuapp.com/api/accomodations/?populate=*"
-);
-console.log(response);
+
 const Hotels = ({ hotels }) => {
-  console.log(hotels);
   return (
     <>
       <Row xs={1} md={2} className="g-4">
@@ -25,22 +19,18 @@ const Hotels = ({ hotels }) => {
               <div key={hotel.id}>
                 <Col>
                   <Card className="mx-5 mb-5 hotel-list">
-                    {/* <Card.Img
-                      as={Image}
-                      src={Header2}
-                      alt={hotel.attributes.alt}
-                    /> */}
                     {hotel.attributes.images.data.map((item, id) => {
                       return (
                         <div>
                           <div key={id}>
                             <Card.Img
-                              layout="fill"
                               as={Image}
-                              src={
-                                BASE_URL + item.attributes.formats.medium.url
-                              }
-                              alt="image"
+                              src={item.attributes.url}
+                              loader={() => item.attributes.url}
+                              objectFit={"cover"}
+                              width={700}
+                              height={250}
+                              alt={item.attributes.alt}
                             />
                           </div>
                         </div>

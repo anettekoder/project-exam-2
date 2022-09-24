@@ -4,9 +4,15 @@
         li > a {
            
             color: white;
+            text-decoration: none;
             &:hover {
-                color: red;
+                color: lightgray;
             }
         }
     }
 }
+
+// .footer {
+//     margin-top: auto !important;
+// }
+

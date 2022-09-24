@@ -31,7 +31,7 @@ const Footer = () => {
   return (
     <Container
       fluid
-      className="bg-primary text-white text-center "
+      className="text-center bg-primary text-white footer"
       style={{ minHeight: 300 }}
     >
       <Row className="py-5 gy-4 mt-5">
@@ -47,9 +47,12 @@ const Footer = () => {
           <div className="p pb-1">Social media</div>
           <InstagramLogo width={30} height={30} />
         </Col>
-        <Col xs={12} md={{ span: 4, order: "last" }} className="p ">
+        <Col xs={12} md={{ span: 4, order: "last" }} className="p">
           <Link href={"/logIn"}>
-            <a style={LinkStyle}> Log in Admin</a>
+            <a className="login-link" style={LinkStyle}>
+              {" "}
+              Log in Admin
+            </a>
           </Link>
         </Col>
       </Row>

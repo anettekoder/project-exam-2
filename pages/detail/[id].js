@@ -3,6 +3,7 @@ import axios from "axios";
 import Heading from "../../components/heading";
 import { BASE_URL } from "../../constant/api";
 import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Header2 from "../../assets/images/headers/header2.jpg";
@@ -48,28 +49,41 @@ export default function Details({ hotel }) {
         <title>Holidaze | Details</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Heading
-        headingText="Detail page"
-        subHeadingText="Experience Bergen's best hotels"
-      />
 
-      <Row>
-        <Col>
-          <Card className="mx-5 mb-5 border-0">
-            <Card.Img as={Image} src={Header2} alt={hotel.attributes.alt} />
-            <Card.Body>
-              {" "}
-              <Card.Text className="h3">{hotel.attributes.name}</Card.Text>
-              <Col>
-                <p className="">{hotel.attributes.description},-</p>
-                <p>Price per night</p>
-                <p className="fw-bold">NOK {hotel.attributes.price},-</p>
-                <EnquiryModal hotelName={hotel.attributes.name} />
-              </Col>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+      <Container className="py-5">
+        <Row>
+          <Col lg={6}>
+            <Image as={Image} src={Header2} alt={hotel.attributes.alt} />
+            {/* {hotel.attributes.images.data.map((item, id) => {
+              return (
+                <div>
+                  <div key={id}>
+                    <Card.Img
+                      as={Image}
+                      src={item.attributes.url}
+                      loader={() => item.attributes.url}
+                      objectFit={"cover"}
+                      width={700}
+                      height={250}
+                      alt={item.attributes.alt}
+                    />
+                  </div>
+                </div>
+              );
+            })} */}
+          </Col>
+
+          <Col lg={6}>
+            <Col>
+              <div className="h3">{hotel.attributes.name}</div>
+              <p className="">{hotel.attributes.description},-</p>
+              <p>Price per night</p>
+              <p className="fw-bold">NOK {hotel.attributes.price},-</p>
+              <EnquiryModal hotelName={hotel.attributes.name} />
+            </Col>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }

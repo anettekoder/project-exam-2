@@ -39,9 +39,9 @@ function AddHotelForm() {
 
   const http = useAxios();
 
-  const handleChange = (event) => {
-    console.log(event.target.files);
-    setFile(event.target.files[0]);
+  const handleChange = (data) => {
+    console.log(data.images);
+    setFile(data.images[0]);
   };
 
   async function onSubmit(data) {
@@ -57,12 +57,10 @@ function AddHotelForm() {
         description: data.description,
       })
     );
-    formData.append("files.image", file);
+    formData.append(data.images[0]);
 
     try {
-      const response = await http.post(BASE_URL + "accomodations/?populate=*", {
-        formData,
-      });
+      const response = await http.post(BASE_URL + "accomodations/", formData);
       console.log("data", response.data);
       setSubmitSuccess("Hotel Added!");
     } catch (error) {

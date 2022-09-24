@@ -19,11 +19,10 @@ export default function Home({ hotels }) {
         ></meta>
       </Head>
 
-      <main>
-        <JumbotronLarge />
-        <Searchbar hotelNames={hotelNames} />
-        <AmusementsCards />
-      </main>
+      <JumbotronLarge />
+      <Searchbar hotelNames={hotelNames} />
+      <div className="h3 text-center pt-5">Experience in Bergen</div>
+      <AmusementsCards />
     </div>
   );
 }
