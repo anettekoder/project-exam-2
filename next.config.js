@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // images: {
-  //   domains: ["https://strapi-holidaze-exam.herokuapp.com/"],
-  //   domains: ["res.cloudinary.com"],
-  // },
+  images: {
+    domains: ["https://strapi-holidaze-exam.herokuapp.com/"],
+    domains: ["res.cloudinary.com"],
+  },
   reactStrictMode: true,
   swcMinify: true,
   webpack(config) {
