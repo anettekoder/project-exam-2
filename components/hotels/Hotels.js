@@ -10,7 +10,10 @@ import EnquiryModal from "../enquiries/EnquiryModal";
 const HotelLink = {
   textDecoration: "none",
 };
-
+const response = fetch(
+  "https://strapi-holidaze-exam.herokuapp.com/api/accomodations/?populate=*"
+);
+console.log(response);
 const Hotels = ({ hotels }) => {
   console.log(hotels);
   return (
@@ -22,11 +25,17 @@ const Hotels = ({ hotels }) => {
               <div key={hotel.id}>
                 <Col>
                   <Card className="mx-5 mb-5 hotel-list">
-                    {/* {hotel.attributes.assets.data?.map((item, id) => {
+                    {/* <Card.Img
+                      as={Image}
+                      src={Header2}
+                      alt={hotel.attributes.alt}
+                    /> */}
+                    {hotel.attributes.images.data.map((item, id) => {
                       return (
                         <div>
                           <div key={id}>
                             <Card.Img
+                              layout="fill"
                               as={Image}
                               src={
                                 BASE_URL + item.attributes.formats.medium.url
@@ -36,7 +45,7 @@ const Hotels = ({ hotels }) => {
                           </div>
                         </div>
                       );
-                    })} */}
+                    })}
 
                     <Card.Body>
                       {" "}

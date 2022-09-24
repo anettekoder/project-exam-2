@@ -2,6 +2,12 @@ import Head from "next/head";
 import axios from "axios";
 import Heading from "../../components/heading";
 import { BASE_URL } from "../../constant/api";
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Header2 from "../../assets/images/headers/header2.jpg";
+import Image from "next/image";
+import EnquiryModal from "../../components/enquiries/EnquiryModal";
 
 export async function getStaticPaths() {
   try {
@@ -46,7 +52,24 @@ export default function Details({ hotel }) {
         headingText="Detail page"
         subHeadingText="Experience Bergen's best hotels"
       />
-      <h1>{hotel?.attributes.name}</h1>
+
+      <Row>
+        <Col>
+          <Card className="mx-5 mb-5 border-0">
+            <Card.Img as={Image} src={Header2} alt={hotel.attributes.alt} />
+            <Card.Body>
+              {" "}
+              <Card.Text className="h3">{hotel.attributes.name}</Card.Text>
+              <Col>
+                <p className="">{hotel.attributes.description},-</p>
+                <p>Price per night</p>
+                <p className="fw-bold">NOK {hotel.attributes.price},-</p>
+                <EnquiryModal hotelName={hotel.attributes.name} />
+              </Col>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
     </div>
   );
 }
