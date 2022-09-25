@@ -2,9 +2,9 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "next/image";
-import Floyen from "../../assets/images/excursions/floyen.jpg";
-import Grieg from "../../assets/images/excursions/grieg.jpg";
-import Shopping from "../../assets/images/excursions/shopping.jpg";
+import Floyen from "../../public/images/floyen.jpg";
+import Grieg from "../../public/images/grieg.jpg";
+import Shopping from "../../public/images/shopping.jpg";
 
 // Card details
 

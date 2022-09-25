@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import InstagramLogo from "../assets/logo/instagram.svg";
+import InstagramLogo from "../public/images/instagram.svg";
 import { menuLinks } from "./header";
 
 const LinkStyle = {

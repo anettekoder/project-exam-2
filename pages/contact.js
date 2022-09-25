@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Heading from "../components/heading";
 import JumbotronSmall from "../components/jumbotron/jumbotronSmall";
-import Header3 from "../assets/images/headers/header3.jpg";
-import PhotoContactPage from "../assets/images/photo-contact-page.jpg";
-import BergenMap from "../assets/images/bergen-map.jpg";
+import Header3 from "../public/images/header3.jpg";
+import PhotoContactPage from "../public/images/photo-contact-page.jpg";
+import BergenMap from "../public/images/bergen-map.jpg";
 import ContactForm from "../components/contact/contactForm";
 import { Col, Container, Row } from "react-bootstrap";
 import Image from "next/image";

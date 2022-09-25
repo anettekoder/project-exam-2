@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import Mainlogo from "../assets/logo/main-logo-white.png";
+import Mainlogo from "../public/images/main-logo-white.png";
 
 export const menuLinks = [
   {

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import JumbotronSmall from "../components/jumbotron/jumbotronSmall";
-import Header2 from "../assets/images/headers/header2.jpg";
+import Header2 from "../public/images/header2.jpg";
 import Heading from "../components/heading";
 import HotelList from "./HotelList";
 import { BASE_URL } from "../constant/api";
