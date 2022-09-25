@@ -46,6 +46,7 @@ export default function Admin() {
     <div className="mx-5">
       <Head>
         <title>Holidaze | Admin Page</title>
+        <meta name="description" content="Admin page for Holidaze Booking" />
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="viewport"

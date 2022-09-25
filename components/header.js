@@ -47,7 +47,10 @@ const Header = () => {
           aria-controls="basic-navbar-nav"
           className="outline-none"
         />
-        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+        <Navbar.Collapse
+          id="basic-navbar-nav"
+          className="justify-content-end px-2"
+        >
           <Nav>
             {menuLinks.map((item, index) => (
               <MenuItem {...item} key={index} />

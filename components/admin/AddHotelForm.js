@@ -89,7 +89,7 @@ function AddHotelForm() {
               className="border-2 focus:border-black focus:ring-black w-full md:text-xl md:h-14 mb-5"
               type="text"
               name="name"
-              placeholder="Hotel name "
+              placeholder="Hotel name *"
               {...register("name", { required: true })}
             />
             {errors?.name && (

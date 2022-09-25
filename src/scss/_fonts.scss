@@ -69,7 +69,8 @@ p {
  // Nav link font-styles
 
 .nav-link {
-    font-family: $montserrat;
-        font-weight: 300;
-        font-size: 1.2rem;
+    font-family: $montserrat !important;
+        font-weight: 300 !important;
+        font-size: 1.5rem !important;
+        
 }

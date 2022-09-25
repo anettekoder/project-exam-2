@@ -4,7 +4,7 @@ import axios from "axios";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { BASE_URL } from "../../constant/api";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
 const schema = yup.object().shape({
   name: yup
@@ -61,7 +61,7 @@ function EnquiryForm({ hotelName }) {
       {submitSuccess ? (
         ""
       ) : (
-        <form
+        <Form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col justify-center items-center font-paragraph"
         >
@@ -70,18 +70,22 @@ function EnquiryForm({ hotelName }) {
               {serverError}
             </span>
           )}
-          <input
-            className="hidden"
+          <div className="h5 py-4">
+            Book your reservation at{" "}
+            <abbr className="fw-bold">{hotelName}</abbr>
+          </div>
+          <Form.Control
+            hidden
             name="hotel"
             type="text"
             defaultValue={hotelName}
             {...register("hotel", { required: true })}
           />
-          <input
+          <Form.Control
             className="w-64 focus:border-black focus:ring-black md:max-w-lg md:w-full mb-4"
             type="text"
             name="name"
-            placeholder="Full name *"
+            placeholder="Full name"
             {...register("name", { required: true })}
           />
           {errors?.name && (
@@ -89,11 +93,11 @@ function EnquiryForm({ hotelName }) {
               {errors.name.message}
             </span>
           )}
-          <input
+          <Form.Control
             className="w-64 focus:border-black focus:ring-black md:max-w-lg md:w-full mb-4"
             type="email"
             name="email"
-            placeholder="Email *"
+            placeholder="Email"
             {...register("email", { required: true })}
           />
           {errors?.email && (
@@ -103,8 +107,8 @@ function EnquiryForm({ hotelName }) {
           )}
           <div className="flex flex-col md:flex-row justify-center items-start">
             <div className="flex flex-col justify-center items-start">
-              <label className="font-heading">From *</label>
-              <input
+              <Form.Label className="font-heading">From</Form.Label>
+              <Form.Control
                 className="w-64 mb-4 md:mr-4 focus:border-black focus:ring-black md:w-56"
                 type="date"
                 name="from"
@@ -117,8 +121,8 @@ function EnquiryForm({ hotelName }) {
               )}
             </div>
             <div className="flex flex-col justify-center items-start">
-              <label className="font-heading">To *</label>
-              <input
+              <Form.Label className="font-heading">To</Form.Label>
+              <Form.Control
                 className="w-64  mb-4 focus:border-black focus:ring-black md:w-56"
                 type="date"
                 name="to"
@@ -139,7 +143,7 @@ function EnquiryForm({ hotelName }) {
           >
             {submitting ? "Booking..." : "Book reservation"}
           </Button>
-        </form>
+        </Form>
       )}
     </>
   );

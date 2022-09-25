@@ -64,6 +64,7 @@ export default class Searchbar extends React.Component {
       <Container className="text-left">
         <Row>
           <Col xs={12}>
+            {" "}
             <InputGroup size="lg">
               <Form.Control
                 aria-label="Large"

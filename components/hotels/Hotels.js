@@ -12,7 +12,7 @@ const HotelLink = {
 const Hotels = ({ hotels }) => {
   return (
     <>
-      <Row xs={1} md={2} className="g-4">
+      <Row xs={1} md={2} xl={3} className="g-4">
         {hotels &&
           hotels.data?.map((hotel, h, i) => {
             return (

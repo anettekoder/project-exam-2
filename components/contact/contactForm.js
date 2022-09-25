@@ -77,7 +77,7 @@ function ContactForm() {
               className="mb-3"
               type="text"
               name="name"
-              placeholder="Full name *"
+              placeholder="Full name"
               {...register("name", { required: true })}
             />
             {errors?.name && (
@@ -88,7 +88,7 @@ function ContactForm() {
             <Form.Control
               type="email"
               name="email"
-              placeholder="Email *"
+              placeholder="Email"
               {...register("email", { required: true })}
             />
             {errors?.email && (
@@ -103,7 +103,7 @@ function ContactForm() {
               rows={3}
               type="text"
               name="message"
-              placeholder="Message... *"
+              placeholder="Message..."
               {...register("message", { required: true })}
             />
             {errors?.message && (
