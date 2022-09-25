@@ -46,8 +46,16 @@ export default function Details({ hotel }) {
   return (
     <div>
       <Head>
-        <title>Holidaze | Details</title>
-        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="Book your accomodattion with Holidaze Booking. You find Bergens best hotels with us"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        ></meta>
+        <title>Holidaze | Details Page</title>
+        <link rel="icon" href="./favicon-holidaze.png" />
       </Head>
 
       <Container className="py-5">

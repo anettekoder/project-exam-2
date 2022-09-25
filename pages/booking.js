@@ -11,16 +11,16 @@ export default function Booking(props) {
   return (
     <div>
       <Head>
-        <title>Holidaze | Booking</title>
         <meta
           name="description"
           content="Book your accomodattion with Holidaze Booking. You find Bergens best hotels with us"
         />
-        <link rel="icon" href="/favicon.ico" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1"
         ></meta>
+        <title>Holidaze | Booking</title>
+        <link rel="icon" href="./favicon-holidaze.png" />
       </Head>
       <main>
         <JumbotronSmall imgPath={Header2} />

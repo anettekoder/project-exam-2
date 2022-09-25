@@ -38,7 +38,7 @@ export default function LoginForm() {
       console.log("response", response.data);
 
       if (response.data.jwt) {
-        setUser({ name: response.data.user_display_name });
+        setUser(response.data);
         router.push("/admin");
       }
     } catch (error) {

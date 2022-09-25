@@ -57,7 +57,7 @@ function AddHotelForm() {
         description: data.description,
       })
     );
-    formData.append(data.images[0]);
+    formData.append("files.images", file, file.name);
 
     try {
       const response = await http.post(BASE_URL + "accomodations/", formData);

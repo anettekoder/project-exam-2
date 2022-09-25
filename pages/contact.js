@@ -13,7 +13,6 @@ export default function Contact() {
   return (
     <div>
       <Head>
-        <title>Holidaze | Contact</title>
         <meta
           name="description"
           content="Contact page for Holidaze. A booking website, specialized on hotels in Bergen"
@@ -23,6 +22,8 @@ export default function Contact() {
           name="viewport"
           content="width=device-width, initial-scale=1"
         ></meta>
+        <title>Holidaze | Contact</title>
+        <link rel="icon" href="./favicon-holidaze.png" />
       </Head>
 
       <main>
