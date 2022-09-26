@@ -1,5 +1,9 @@
 import Image from "next/image";
 import { useState } from "react";
+import { Col } from "react-bootstrap";
+import { Card } from "react-bootstrap";
+import Link from "next/link";
+import EnquiryModal from "../enquiries/EnquiryModal";
 
 const HotelDetails = ({ hotels }) => {
   return (
