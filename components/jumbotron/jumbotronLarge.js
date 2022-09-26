@@ -29,7 +29,7 @@ export default function JumbotronLarge() {
         <Col className="d-block d-md-none d-lg-none">
           <Row className="bg-secondary h-25 d-flex"></Row>
           <Row className="pb-5">
-            <Image src={Header1} />
+            <Image src={Header1} alt="alt text" />
           </Row>
           <Row>
             <h1 className="text-center pb-5">

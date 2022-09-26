@@ -7,7 +7,7 @@ const JumbotronSmall = ({ imgPath }) => {
   return (
     <>
       <div className="pb-5">
-        <Image src={imgPath} height={1500} objectFit={"cover"} />
+        <Image src={imgPath} height={1500} objectFit={"cover"} alt="alt text" />
       </div>
     </>
   );
