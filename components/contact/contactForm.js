@@ -50,9 +50,7 @@ function ContactForm() {
   return (
     <>
       {submitSuccess && (
-        <span className="text-center py-20 text-2xl border-gray-500 border-b-2 w-full mb-5 xl:border-0">
-          {submitSuccess}
-        </span>
+        <span className="success-message">{submitSuccess}</span>
       )}
       {submitSuccess ? (
         ""
@@ -62,16 +60,15 @@ function ContactForm() {
           disabled={submitting}
           className="m-5"
         >
-          {serverError && (
-            <span className="text-center p-1 mb-5 w-full bg-red-400 border-red-600 border-2">
-              {serverError}
-            </span>
-          )}
+          {serverError && <span>{serverError}</span>}
           <Form.Group
             className="mb-3"
             controlId="formGroupEmail"
             disabled={submitting}
           >
+            {errors?.name && (
+              <span className="warning">{errors.name.message}</span>
+            )}
             <Form.Control
               className="mb-3"
               type="text"
@@ -79,10 +76,8 @@ function ContactForm() {
               placeholder="Full name"
               {...register("name", { required: true })}
             />
-            {errors?.name && (
-              <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">
-                {errors.name.message}
-              </span>
+            {errors?.email && (
+              <span className="warning">{errors.email.message}</span>
             )}
             <Form.Control
               type="email"
@@ -90,13 +85,11 @@ function ContactForm() {
               placeholder="Email"
               {...register("email", { required: true })}
             />
-            {errors?.email && (
-              <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">
-                {errors.email.message}
-              </span>
-            )}
           </Form.Group>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+          <Form.Group className="mb-3" controlId="ContactForm.ControlTextarea1">
+            {errors?.message && (
+              <span className="warning">{errors.message.message}</span>
+            )}
             <Form.Control
               as="textarea"
               rows={3}
@@ -105,18 +98,8 @@ function ContactForm() {
               placeholder="Message..."
               {...register("message", { required: true })}
             />
-            {errors?.message && (
-              <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">
-                {errors.message.message}
-              </span>
-            )}
           </Form.Group>
-          <Button
-            type="submit"
-            className="w-full md:w-48 h-12 md:h-14 font-heading  text-white hover:text-blue-500 text-xl md:text-2xl bg-blue-500 hover:bg-transparent border-blue-500 border-2 tracking-widest transition ease-out duration-300"
-          >
-            {submitting ? "Sending..." : "SEND"}
-          </Button>
+          <Button type="submit">{submitting ? "Sending..." : "SEND"}</Button>
         </Form>
       )}
     </>

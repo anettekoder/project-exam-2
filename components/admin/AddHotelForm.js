@@ -7,12 +7,13 @@ import useAxios from "../../hooks/useAxios";
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { BASE_URL } from "../../constant/api";
+import Alert from "react-bootstrap/Alert";
 
 const schema = yup.object().shape({
   name: yup
     .string()
     .required("Please enter hotel name")
-    .min(5, "Please enter the full hotel name"),
+    .min(4, "Hotel name must contain minimum 4 letter"),
   price: yup
     .number()
     .required("Please enter hotel price")
@@ -82,16 +83,10 @@ function AddHotelForm() {
           disabled={submitting}
           className="flex flex-col w-72 md:w-9/12 lg:w-1/2 lg:my-10"
         >
-          {serverError && (
-            <span className="text-center p-1 mb-5 w-full bg-red-400 border-red-600 border-2">
-              {serverError}
-            </span>
-          )}
+          {serverError && <span>{serverError}</span>}
           <Form.Group className="flex flex-col w-full" disabled={submitting}>
             {errors?.name && (
-              <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">
-                {errors.name.message}
-              </span>
+              <span className="warning">{errors.name.message}</span>
             )}
             <Form.Control
               className="border-2 focus:border-black focus:ring-black w-full md:text-xl md:h-14 mb-5"
@@ -100,7 +95,9 @@ function AddHotelForm() {
               placeholder="Hotel name *"
               {...register("name", { required: true })}
             />
-
+            {errors?.price && (
+              <span className="warning">{errors.price.message}</span>
+            )}
             <Form.Control
               className="border-2 focus:border-black focus:ring-black w-full md:text-xl md:h-14 mb-5"
               type="text"
@@ -108,13 +105,11 @@ function AddHotelForm() {
               placeholder="Price *"
               {...register("price", { required: true })}
             />
-            {errors?.price && (
-              <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">
-                {errors.price.message}
-              </span>
-            )}
 
             <Form.Label>Upload image</Form.Label>
+            {errors?.images && (
+              <span className="warning">{errors.images.message}</span>
+            )}
             <Form.Control
               className="w-full md:text-xl md:h-14 mt-2 mb-5"
               onChange={handleChange}
@@ -123,12 +118,9 @@ function AddHotelForm() {
               name="images"
               {...register("images", { required: true })}
             />
-            {errors?.image && (
-              <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">
-                {errors.image.message}
-              </span>
+            {errors?.description && (
+              <span className="warning">{errors.description.message}</span>
             )}
-
             <Form.Control
               as="textarea"
               rows={3}
@@ -138,11 +130,6 @@ function AddHotelForm() {
               {...register("description", { required: true })}
             />
 
-            {errors?.description && (
-              <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">
-                {errors.description.message}
-              </span>
-            )}
             <Button type="submit" variant="primary" className="mt-3">
               {submitting ? "Adding hotel..." : "Add Hotel"}
             </Button>

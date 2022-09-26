@@ -11,7 +11,7 @@ import EnquiryModal from "../../components/enquiries/EnquiryModal";
 
 export async function getStaticPaths() {
   try {
-    const response = await axios.get(BASE_URL + "accomodations/?populate=*");
+    const response = await axios.get(BASE_URL + "accomodations/");
     console.log(response.data);
     const hotels = response.data;
     const paths = hotels.data.map((hotel) => ({
@@ -24,7 +24,7 @@ export async function getStaticPaths() {
   }
 }
 export async function getStaticProps({ params }) {
-  const url = `${BASE_URL}accomodations/${params.id}?populate*`;
+  const url = `${BASE_URL}accomodations/${params.id}?populate=*`;
 
   let hotel = null;
 
@@ -62,11 +62,6 @@ export default function Details({ hotel }) {
       <Container className="py-5">
         <Row>
           <Col lg={6}>
-            {/* <Image
-              as={Image}
-              src={Header2}
-              alt={item.attributes.alternativeText}
-            /> */}
             <div>
               <div key={hotel.id}>
                 <Card.Img
