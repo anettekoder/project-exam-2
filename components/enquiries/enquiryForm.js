@@ -53,8 +53,6 @@ function EnquiryForm({ hotelName }) {
     }
   }
 
-  console.log(errors);
-
   return (
     <>
       {submitSuccess && <span>{submitSuccess}</span>}

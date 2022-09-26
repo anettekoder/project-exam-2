@@ -20,7 +20,7 @@ export default function Booking(props) {
           content="width=device-width, initial-scale=1"
         ></meta>
         <title>Holidaze | Booking</title>
-        <link rel="icon" href="./favicon-holidaze.png" />
+        {/* <link rel="icon" href="./favicon-holidaze.png" /> */}
       </Head>
       <main>
         <JumbotronSmall imgPath={Header2} />

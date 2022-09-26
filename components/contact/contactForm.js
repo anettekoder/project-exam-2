@@ -46,8 +46,6 @@ function ContactForm() {
     }
   }
 
-  console.log(errors);
-
   return (
     <>
       {submitSuccess && (

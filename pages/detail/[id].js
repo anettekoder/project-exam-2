@@ -1,12 +1,11 @@
 import Head from "next/head";
 import axios from "axios";
-import Heading from "../../components/heading";
+// import Header2 from "../../public/images/header2.jpg";
 import { BASE_URL } from "../../constant/api";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-// import Header2 from "../../assets/images/headers/header2.jpg";
 import Image from "next/image";
 import EnquiryModal from "../../components/enquiries/EnquiryModal";
 
@@ -25,7 +24,7 @@ export async function getStaticPaths() {
   }
 }
 export async function getStaticProps({ params }) {
-  const url = `${BASE_URL}accomodations/${params.id}`;
+  const url = `${BASE_URL}accomodations${params.id}`;
 
   let hotel = null;
 
@@ -43,6 +42,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Details({ hotel }) {
+  console.log(hotel[0].attributes.url);
   return (
     <div>
       <Head>
@@ -50,48 +50,44 @@ export default function Details({ hotel }) {
           name="description"
           content="Book your accomodattion with Holidaze Booking. You find Bergens best hotels with us"
         />
+        <link rel="icon" href="/favicon.ico" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1"
         ></meta>
         <title>Holidaze | Details Page</title>
-        {/* <link rel="icon" href="./favicon-holidaze.png" /> */}
+        <link rel="icon" href="./favicon-holidaze.png" />
       </Head>
 
       <Container className="py-5">
         <Row>
           <Col lg={6}>
             {/* <Image
-              // as={Image}
-              src={hotel.attributes.url}
-              alt={hotel.attributes.alt}
+              as={Image}
+              src={Header2}
+              alt={item.attributes.alternativeText}
             /> */}
-            {hotel.attributes.images.data.map((item, id) => {
-              return (
-                <div>
-                  <div key={id}>
-                    <Card.Img
-                      as={Image}
-                      src={item.attributes.url}
-                      loader={() => item.attributes.url}
-                      objectFit={"cover"}
-                      width={700}
-                      height={250}
-                      alt={item.attributes.alt}
-                    />
-                  </div>
-                </div>
-              );
-            })}
+            <div>
+              <div key={hotel.id}>
+                <Card.Img
+                  as={Image}
+                  src={hotel[0].attributes.url}
+                  objectFit={"cover"}
+                  width={700}
+                  height={250}
+                  alt={hotel[0].attributes.alternativeText}
+                />
+              </div>
+            </div>
           </Col>
 
           <Col lg={6}>
             <Col>
-              <div className="h3">{hotel.attributes.name}</div>
-              <p className="">{hotel.attributes.description},-</p>
+              <div className="h3">{hotel[0].attributes.name}</div>
+              <p className="">{hotel[0].attributes.description}</p>
               <p>Price per night</p>
-              <p className="fw-bold">NOK {hotel.attributes.price},-</p>
-              <EnquiryModal hotelName={hotel.attributes.name} />
+              <p className="fw-bold">NOK {hotel[0].attributes.price},-</p>
+              <EnquiryModal hotelName={hotel[0].attributes.name} />
             </Col>
           </Col>
         </Row>

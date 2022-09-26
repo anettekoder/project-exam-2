@@ -19,7 +19,7 @@ const schema = yup.object().shape({
     .typeError("Price must be a number")
     .positive()
     .integer(),
-  images: yup.string().required("Please upload a hotel image"),
+  images: yup.mixed().required("Please upload a hotel image"),
   description: yup
     .string()
     .required("Please enter your description")
@@ -57,7 +57,7 @@ function AddHotelForm() {
         description: data.description,
       })
     );
-    formData.append("files", data.images[0]);
+    formData.append("files.images", data.images[0]);
 
     try {
       const response = await http.post(
