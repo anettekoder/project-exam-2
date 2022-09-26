@@ -33,9 +33,9 @@ function AddHotelForm() {
   const [submitSuccess, setSubmitSuccess] = useState(null);
   const [file, setFile] = useState(null);
 
-  const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(schema),
-  });
+  const formOptions = { resolver: yupResolver(schema) };
+  const { register, handleSubmit, formState } = useForm(formOptions);
+  const { errors } = formState;
 
   const http = useAxios();
 
@@ -88,6 +88,11 @@ function AddHotelForm() {
             </span>
           )}
           <Form.Group className="flex flex-col w-full" disabled={submitting}>
+            {errors?.name && (
+              <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">
+                {errors.name.message}
+              </span>
+            )}
             <Form.Control
               className="border-2 focus:border-black focus:ring-black w-full md:text-xl md:h-14 mb-5"
               type="text"
@@ -95,11 +100,7 @@ function AddHotelForm() {
               placeholder="Hotel name *"
               {...register("name", { required: true })}
             />
-            {errors?.name && (
-              <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">
-                {errors.name.message}
-              </span>
-            )}
+
             <Form.Control
               className="border-2 focus:border-black focus:ring-black w-full md:text-xl md:h-14 mb-5"
               type="text"

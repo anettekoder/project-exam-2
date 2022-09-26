@@ -5,6 +5,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { BASE_URL } from "../../constant/api";
 import Form from "react-bootstrap/Form";
+import FormError from "../admin/FormError";
 import { Button } from "react-bootstrap";
 
 const schema = yup.object().shape({
@@ -27,9 +28,9 @@ function ContactForm() {
   const [serverError, setServerError] = useState(null);
   const [submitSuccess, setSubmitSuccess] = useState(null);
 
-  const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(schema),
-  });
+  const formOptions = { resolver: yupResolver(schema) };
+  const { register, handleSubmit, formState } = useForm(formOptions);
+  const { errors } = formState;
 
   async function onSubmit(data) {
     setSubmitting(true);

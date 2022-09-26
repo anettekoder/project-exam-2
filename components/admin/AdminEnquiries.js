@@ -1,18 +1,8 @@
-// import { useState } from "react";
+import { useState } from "react";
 import Moment from "react-moment";
 import { Table } from "react-bootstrap";
 
 function AdminEnquiries({ enquiries, hotelName }) {
-  // const [selected, setSelected] = useState(null);
-
-  // const toggle = (i) => {
-  //   if (selected == i) {
-  //     return setSelected(null);
-  //   }
-
-  //   setSelected(i);
-  // };
-
   return (
     <div>
       <h2 className="pb-3">Enquiries</h2>
