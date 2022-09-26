@@ -35,7 +35,6 @@ export default function LoginForm() {
 
     try {
       const response = await axios.post(url, data);
-      console.log("response", response.data);
 
       if (response.data.jwt) {
         setUser(response.data);

@@ -6,7 +6,7 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Header2 from "../../assets/images/headers/header2.jpg";
+// import Header2 from "../../assets/images/headers/header2.jpg";
 import Image from "next/image";
 import EnquiryModal from "../../components/enquiries/EnquiryModal";
 
@@ -55,14 +55,18 @@ export default function Details({ hotel }) {
           content="width=device-width, initial-scale=1"
         ></meta>
         <title>Holidaze | Details Page</title>
-        <link rel="icon" href="./favicon-holidaze.png" />
+        {/* <link rel="icon" href="./favicon-holidaze.png" /> */}
       </Head>
 
       <Container className="py-5">
         <Row>
           <Col lg={6}>
-            <Image as={Image} src={Header2} alt={hotel.attributes.alt} />
-            {/* {hotel.attributes.images.data.map((item, id) => {
+            {/* <Image
+              // as={Image}
+              src={hotel.attributes.url}
+              alt={hotel.attributes.alt}
+            /> */}
+            {hotel.attributes.images.data.map((item, id) => {
               return (
                 <div>
                   <div key={id}>
@@ -78,7 +82,7 @@ export default function Details({ hotel }) {
                   </div>
                 </div>
               );
-            })} */}
+            })}
           </Col>
 
           <Col lg={6}>
