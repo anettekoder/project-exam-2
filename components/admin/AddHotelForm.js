@@ -19,7 +19,7 @@ const schema = yup.object().shape({
     .typeError("Price must be a number")
     .positive()
     .integer(),
-  image: yup.string().required("Please upload a hotel image"),
+  images: yup.string().required("Please upload a hotel image"),
   description: yup
     .string()
     .required("Please enter your description")
@@ -57,10 +57,13 @@ function AddHotelForm() {
         description: data.description,
       })
     );
-    formData.append("files.images", file, file.name);
+    formData.append("files", data.images[0]);
 
     try {
-      const response = await http.post(BASE_URL + "accomodations/", formData);
+      const response = await http.post(
+        BASE_URL + "accomodations/?populate=*",
+        formData
+      );
       console.log("data", response.data);
       setSubmitSuccess("Hotel Added!");
     } catch (error) {
@@ -116,8 +119,8 @@ function AddHotelForm() {
               onChange={handleChange}
               type="file"
               accept="image/*"
-              name="image"
-              {...register("image", { required: true })}
+              name="images"
+              {...register("images", { required: true })}
             />
             {errors?.image && (
               <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">
