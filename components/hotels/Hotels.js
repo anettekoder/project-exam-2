@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "next/image";
-import EnquiryModal from "../enquiries/EnquiryModal";
+import EnquiryModal from "../enquiries/EnquiryModals";
 
 const HotelLink = {
   textDecoration: "none",

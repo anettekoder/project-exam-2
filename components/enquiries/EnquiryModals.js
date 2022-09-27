@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import EnquiryForm from "./EnquiryForm";
+import EnquiryForm from "./EnquiryForms";
 
 const btnStyle = {
   backgroundColor: "#001C55",
