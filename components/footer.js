@@ -32,7 +32,7 @@ const Footer = () => {
     <div className="footer">
       <Container
         fluid
-        className="text-sm-start text-md-center bg-primary text-white"
+        className="text-center bg-primary text-white"
         style={{ minHeight: 300 }}
       >
         <Row className="py-5 gy-4 mt-5">
