@@ -1,6 +1,5 @@
 import Head from "next/head";
 import axios from "axios";
-
 import { BASE_URL } from "../../constant/api";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
@@ -42,7 +41,6 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Details({ hotel }) {
-  // console.log(hotel[0].attributes.url);
   return (
     <div>
       <Head>

@@ -31,7 +31,6 @@
     "live-server": "^1.2.2",
     "sass": "^1.54.6"
   },
-
   "cacheDirectories": [
     "node_modules/",
     ".next/cache/"
