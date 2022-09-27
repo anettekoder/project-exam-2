@@ -5,7 +5,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { BASE_URL } from "../../constant/api";
 import Form from "react-bootstrap/Form";
-import FormError from "../admin/FormError";
+// import FormError from "../admin/FormError";
 import { Button } from "react-bootstrap";
 
 const schema = yup.object().shape({

@@ -17,7 +17,7 @@ const schema = yup.object().shape({
     .email("Please enter a valid email address"),
   from: yup
     .date()
-    .required("Please choose the date you wish to start your visit"),
+    .required("Please choose the required start date of your visit"),
   to: yup
     .date()
     .when(
@@ -26,7 +26,7 @@ const schema = yup.object().shape({
         from &&
         schema.min(from, "Your end date can not be before your start date")
     )
-    .required("Please choose the date you wish to end your visit"),
+    .required("Please choose the required end date of your visit"),
 });
 
 function EnquiryForm({ hotelName }) {
@@ -34,9 +34,9 @@ function EnquiryForm({ hotelName }) {
   const [serverError, setServerError] = useState(null);
   const [submitSuccess, setSubmitSuccess] = useState(null);
 
-  const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(schema),
-  });
+  const formOptions = { resolver: yupResolver(schema) };
+  const { register, handleSubmit, formState } = useForm(formOptions);
+  const { errors } = formState;
 
   async function onSubmit(data) {
     setSubmitting(true);
