@@ -55,18 +55,21 @@ export default function LoginForm() {
         )}
         <fieldset disabled={submitting}>
           <div>
+            {errors?.identifier && (
+              <FormError>{errors.identifier.message}</FormError>
+            )}
             <input
               name="identifier"
               {...register("identifier", { required: true })}
               placeholder="Username"
               className="appearance-none rounded-none relative block w-full my-2 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900   sm:text-sm"
             />
-            {errors?.identifier && (
-              <FormError>{errors.identifier.message}</FormError>
-            )}
           </div>
 
           <div>
+            {errors?.password && (
+              <FormError>{errors.password.message}</FormError>
+            )}
             <input
               name="password"
               placeholder="Password"
@@ -74,9 +77,6 @@ export default function LoginForm() {
               type="password"
               className="appearance-none rounded-none relative block w-full my-2 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  sm:text-sm"
             />
-            {errors?.password && (
-              <FormError>{errors.password.message}</FormError>
-            )}
           </div>
           <button className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium">
             {submitting ? "Loggin in..." : "Login"}

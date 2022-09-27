@@ -35,7 +35,6 @@ function ContactForm() {
   async function onSubmit(data) {
     setSubmitting(true);
     setServerError(null);
-    console.log(data);
 
     try {
       const response = await axios.post(BASE_URL + "messages/", { data });
