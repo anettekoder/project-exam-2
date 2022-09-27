@@ -8,6 +8,9 @@ import ContactForm from "../components/contact/contactForm";
 import { Col, Container, Row } from "react-bootstrap";
 import Image from "next/image";
 import Link from "next/link";
+const contactPageHeader = {
+  height: "500px",
+};
 
 export default function Contact() {
   return (
@@ -27,7 +30,13 @@ export default function Contact() {
       </Head>
 
       <main>
-        <JumbotronSmall imgPath={Header3} />
+        <JumbotronSmall
+          imgPath={Header3}
+          height={700}
+          width={1500}
+          altText={"View of a hotel reception"}
+          className="contactHeader"
+        />
 
         <Container>
           <Row className="pt-5">

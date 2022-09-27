@@ -23,7 +23,12 @@ export default function Booking(props) {
         {/* <link rel="icon" href="./favicon-holidaze.png" /> */}
       </Head>
       <main>
-        <JumbotronSmall imgPath={Header2} />
+        <JumbotronSmall
+          imgPath={Header2}
+          height={1500}
+          width={1500}
+          altText={"View of Bryggen in Bergen"}
+        />
         <div className="container">
           <Heading
             headingText="Experience Bergen with Holidaze"

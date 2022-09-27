@@ -3,11 +3,20 @@ import Image from "next/image";
 
 // Image for jumbotron for smaller devices
 
-const JumbotronSmall = ({ imgPath }) => {
+const height = {
+  height: "700px",
+};
+
+const JumbotronSmall = ({ imgPath, altText, height }) => {
   return (
     <>
       <div className="pb-5">
-        <Image src={imgPath} height={1500} objectFit={"cover"} alt="alt text" />
+        <Image
+          src={imgPath}
+          height={height}
+          objectFit={"cover"}
+          alt={altText}
+        />
       </div>
     </>
   );
