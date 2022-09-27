@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "next/image";
-import EnquiryModal from "../../components/enquiries/EnquiryModal";
+import EnquiryModal from "../../components/enquiries/EnquiryModals";
 
 export async function getStaticPaths() {
   try {
