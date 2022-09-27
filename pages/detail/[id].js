@@ -78,7 +78,7 @@ export default function Details({ hotel }) {
 
           <Col lg={6}>
             <Col>
-              <div className="h3">{hotel.attributes.name}</div>
+              <div className="h3 pt-5">{hotel.attributes.name}</div>
               <p className="">{hotel.attributes.description}</p>
               <p>Price per night</p>
               <p className="fw-bold">NOK {hotel.attributes.price},-</p>
