@@ -24,6 +24,12 @@ body {
 }
 
 .success-message {
-    color: green !important;
-    padding-bottom: 10px;
+    color: v.$secondary !important;
+    
+}
+@media (max-width: 768px) {
+    .success-message {
+        padding-bottom: 50px !important;
+    }
+
 }
