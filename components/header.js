@@ -40,7 +40,9 @@ const Header = () => {
           <Image
             src={Mainlogo}
             className="d-inline-block align-top"
-            alt="React Bootstrap logo"
+            alt="Holidaze logo"
+            width={230}
+            height={100}
           />
         </Navbar.Brand>
         <Navbar.Toggle

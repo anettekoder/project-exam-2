@@ -8,6 +8,7 @@ import FormError from "./FormError";
 import { BASE_URL, TOKEN_PATH } from "../../constant/api";
 
 import AuthContext from "../../context/AuthContext";
+import { Button, Form, FormControl } from "react-bootstrap";
 
 const url = BASE_URL + TOKEN_PATH;
 
@@ -49,7 +50,7 @@ export default function LoginForm() {
   }
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} className="px-5">
+      <Form onSubmit={handleSubmit(onSubmit)} className="px-5">
         {loginError && (
           <FormError>{"Username or password is uncorrect"}</FormError>
         )}
@@ -58,7 +59,7 @@ export default function LoginForm() {
             {errors?.identifier && (
               <FormError>{errors.identifier.message}</FormError>
             )}
-            <input
+            <FormControl
               name="identifier"
               {...register("identifier", { required: true })}
               placeholder="Username"
@@ -70,7 +71,7 @@ export default function LoginForm() {
             {errors?.password && (
               <FormError>{errors.password.message}</FormError>
             )}
-            <input
+            <FormControl
               name="password"
               placeholder="Password"
               {...register("password")}
@@ -78,11 +79,11 @@ export default function LoginForm() {
               className="appearance-none rounded-none relative block w-full my-2 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  sm:text-sm"
             />
           </div>
-          <button className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium">
+          <Button type="submit" variant="primary" className="mt-3">
             {submitting ? "Loggin in..." : "Login"}
-          </button>
+          </Button>
         </fieldset>
-      </form>
+      </Form>
     </>
   );
 }

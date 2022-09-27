@@ -14,8 +14,8 @@ export default function Login() {
           content="width=device-width, initial-scale=1"
         ></meta>
       </Head>
-      <div className="grid place-content-center">
-        <Heading content="Log in" />
+      <div className="grid pt-5">
+        <Heading headingText="Log in" />
         <LoginForm />
       </div>
     </>
