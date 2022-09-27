@@ -55,7 +55,7 @@ export default function Admin() {
           content="width=device-width, initial-scale=1"
         ></meta>
         <title>Holidaze | Admin Page</title>
-        <link rel="icon" href="./favicon-holidaze.png" />
+        <link rel="icon" href="/favicon-holidaze.png" />
       </Head>
       <main>
         <div className="mt-5">

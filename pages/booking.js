@@ -5,6 +5,7 @@ import Header2 from "../public/images/header2.jpg";
 import Heading from "../components/heading";
 import HotelList from "./HotelList";
 import { BASE_URL } from "../constant/api";
+// import Favicon from "./favicon-holidaze.png";
 
 export default function Booking(props) {
   const { hotels } = props;
@@ -20,12 +21,12 @@ export default function Booking(props) {
           content="width=device-width, initial-scale=1"
         ></meta>
         <title>Holidaze | Booking</title>
-        {/* <link rel="icon" href="./favicon-holidaze.png" /> */}
+        <link rel="icon" href="/favicon-holidaze.png" />
       </Head>
       <main>
         <JumbotronSmall
           imgPath={Header2}
-          height={1500}
+          height={500}
           width={1500}
           altText={"View of Bryggen in Bergen"}
         />

@@ -18,7 +18,7 @@ export default function Home({ hotels }) {
           name="description"
           content="Holidaze is a hotel booking site, specialized on hotels in Bergen"
         />
-        {/* <link rel="icon" href="./favicon-holidaze.png" /> */}
+        <link rel="icon" href="/favicon-holidaze.png" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1"

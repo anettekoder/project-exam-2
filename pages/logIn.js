@@ -8,7 +8,7 @@ export default function Login() {
       <Head>
         <title>Holidaze | Log in</title>
         <meta name="description" content="Holidaze Booking Log in page" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon-holidaze.png" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1"
