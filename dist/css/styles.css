@@ -10590,7 +10590,7 @@ textarea.form-control-lg {
 
 @media (max-width: 768px) {
   .h1 {
-    font-size: 2em !important;
+    font-size: 1.4em !important;
     line-height: 1.25em !important;
   }
 }
@@ -10603,7 +10603,7 @@ textarea.form-control-lg {
 
 @media (max-width: 768px) {
   .h2 {
-    font-size: 1.625em !important;
+    font-size: 1em !important;
     line-height: 1.125em !important;
   }
 }
@@ -10623,6 +10623,7 @@ textarea.form-control-lg {
 }
 p {
   font-family: "Montserrat", sans-serif;
+  color: #00072D !important;
   font-weight: 300;
   font-size: 1em;
   line-height: 1.375em;
@@ -10635,9 +10636,9 @@ p {
   }
 }
 .nav-link {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 300;
-  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 300 !important;
+  font-size: 1.5rem !important;
 }
 
 .jumbotron {
@@ -10645,7 +10646,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("../../assets/images/headers/header1.jpg");
+  background-image: url("../../public/images/header1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -10684,9 +10685,10 @@ p {
 }
 .footer-navigation ul li > a {
   color: white;
+  text-decoration: none;
 }
 .footer-navigation ul li > a:hover {
-  color: red;
+  color: lightgray;
 }
 
 .amusement-card > span:first-of-type {
@@ -10703,13 +10705,26 @@ p {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background: #fff;
+}
+
+.warning {
+  color: red;
+}
+
+.success-message {
+  color: green !important;
+  padding-bottom: 10px;
 }
 
 .hotel-list {
   list-style-type: none;
   border: none !important;
   background: #F5F5F5 !important;
+  max-width: 700px !important;
 }
 
 @media (max-width: 768px) {
