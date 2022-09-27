@@ -55,19 +55,14 @@ function EnquiryForm({ hotelName }) {
 
   return (
     <>
-      {submitSuccess && <span>{submitSuccess}</span>}
+      {submitSuccess && (
+        <span className="success-message">{submitSuccess}</span>
+      )}
       {submitSuccess ? (
         ""
       ) : (
-        <Form
-          onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col justify-center items-center font-paragraph"
-        >
-          {serverError && (
-            <span className="bg-red-400 border-red-600 border-2">
-              {serverError}
-            </span>
-          )}
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          {serverError && <span>{serverError}</span>}
           <div className="h5 py-4">
             Book your reservation at{" "}
             <abbr className="fw-bold">{hotelName}</abbr>
@@ -79,6 +74,9 @@ function EnquiryForm({ hotelName }) {
             defaultValue={hotelName}
             {...register("hotel", { required: true })}
           />
+          {errors?.name && (
+            <span className="warning">{errors.name.message}</span>
+          )}
           <Form.Control
             className="w-64 focus:border-black focus:ring-black md:max-w-lg md:w-full mb-4"
             type="text"
@@ -86,10 +84,8 @@ function EnquiryForm({ hotelName }) {
             placeholder="Full name"
             {...register("name", { required: true })}
           />
-          {errors?.name && (
-            <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">
-              {errors.name.message}
-            </span>
+          {errors?.email && (
+            <span className="warning">{errors.email.message}</span>
           )}
           <Form.Control
             className="w-64 focus:border-black focus:ring-black md:max-w-lg md:w-full mb-4"
@@ -98,47 +94,35 @@ function EnquiryForm({ hotelName }) {
             placeholder="Email"
             {...register("email", { required: true })}
           />
-          {errors?.email && (
-            <span className="text-center p-1 mb-5 w-full bg-yellow-400 border-yellow-600 border-2">
-              {errors.email.message}
-            </span>
-          )}
+
           <div className="flex flex-col md:flex-row justify-center items-start">
             <div className="flex flex-col justify-center items-start">
               <Form.Label className="font-heading">From</Form.Label>
+              {errors?.from && (
+                <span className="warning">{errors.from.message}</span>
+              )}
               <Form.Control
                 className="w-64 mb-4 md:mr-4 focus:border-black focus:ring-black md:w-56"
                 type="date"
                 name="from"
                 {...register("from", { required: true })}
               />
-              {errors?.from && (
-                <span className="w-64 md:w-56 bg-yellow-400 border-yellow-600 border-2">
-                  {errors.from.message}
-                </span>
-              )}
             </div>
             <div className="flex flex-col justify-center items-start">
               <Form.Label className="font-heading">To</Form.Label>
+              {errors?.to && (
+                <span className="warning">{errors.to.message}</span>
+              )}
               <Form.Control
                 className="w-64  mb-4 focus:border-black focus:ring-black md:w-56"
                 type="date"
                 name="to"
                 {...register("to", { required: true })}
               />
-              {errors?.to && (
-                <span className="w-64 md:w-56 text-center bg-yellow-400 border-yellow-600 border-2 mb-5">
-                  {errors.to.message}
-                </span>
-              )}
             </div>
           </div>
 
-          <Button
-            type="submit"
-            variant="primary"
-            className="w-64 h-12 text-white hover:text-greenColor text-xl bg-greenColor hover:bg-transparent border-greenColor border-2 tracking-widest transition ease-out duration-300"
-          >
+          <Button type="submit" variant="primary">
             {submitting ? "Booking..." : "Book reservation"}
           </Button>
         </Form>
