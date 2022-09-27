@@ -1,4 +1,3 @@
-import Moment from "react-moment";
 import { Table } from "react-bootstrap";
 
 function AdminEnquiries({ enquiries }) {
@@ -20,21 +19,17 @@ function AdminEnquiries({ enquiries }) {
           {enquiries &&
             enquiries.data?.map((enquiry, i) => {
               return (
-                <tr key={enquiry.attributes.id}>
+                <tr key={enquiry.id}>
                   <td>
                     <p>{enquiry.attributes.hotel}</p>
                   </td>
 
                   <td>
-                    <Moment format="DD/MM/YYYY">
-                      <p>{enquiry.attributes.from}</p>
-                    </Moment>
+                    <p>{enquiry.attributes.from}</p>
                   </td>
 
                   <td>
-                    <Moment format="DD/MM/YYYY">
-                      <p>{enquiry.attributes.to}</p>
-                    </Moment>
+                    <p>{enquiry.attributes.to}</p>
                   </td>
 
                   <td>

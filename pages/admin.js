@@ -23,27 +23,24 @@ export default function Admin() {
 
   const http = useAxios();
 
-  useEffect(
-    function () {
-      if (auth === null) {
-        router.push("/");
-      }
+  useEffect(function () {
+    if (auth === null) {
+      router.push("/");
+    }
 
-      async function getData() {
-        try {
-          const enquiriesResponse = await http.get("/enquiries");
-          setEnquiries(enquiriesResponse.data);
-          const messagesResponse = await http.get("/messages");
-          setMessages(messagesResponse.data);
-        } catch (error) {
-          console.log(error);
-        }
+    async function getData() {
+      try {
+        const enquiriesResponse = await http.get("/enquiries");
+        setEnquiries(enquiriesResponse.data);
+        const messagesResponse = await http.get("/messages");
+        setMessages(messagesResponse.data);
+      } catch (error) {
+        console.log(error);
       }
+    }
 
-      getData();
-    },
-    [auth, http, router]
-  );
+    getData();
+  }, []);
 
   return (
     <div className="mx-5">
