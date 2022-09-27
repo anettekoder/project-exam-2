@@ -2,7 +2,7 @@ import { useState } from "react";
 import Moment from "react-moment";
 import { Table } from "react-bootstrap";
 
-function AdminEnquiries({ enquiries, hotelName }) {
+function AdminEnquiries({ enquiries }) {
   return (
     <div>
       <h2 className="pb-3">Enquiries</h2>
@@ -23,7 +23,7 @@ function AdminEnquiries({ enquiries, hotelName }) {
               return (
                 <tr key={enquiry.attributes.id}>
                   <td>
-                    <p>{hotelName}</p>
+                    <p>{enquiry.attributes.hotel}</p>
                   </td>
 
                   <td>
