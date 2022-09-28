@@ -10,7 +10,10 @@ const styleSection = {
 };
 
 export default function Home({ hotels }) {
-  const hotelNames = hotels?.map((hotel) => hotel.attributes.name);
+  const searchHotels = hotels?.map((hotel) => ({
+    id: hotel.id,
+    name: hotel.attributes.name,
+  }));
   return (
     <div>
       <Head>
@@ -28,7 +31,7 @@ export default function Home({ hotels }) {
 
       <JumbotronLarge />
 
-      <Searchbar hotelNames={hotelNames} />
+      <Searchbar searchHotels={searchHotels} />
       <div className="h3 text-center" style={styleSection}>
         Experience in Bergen
       </div>

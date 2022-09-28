@@ -15,13 +15,13 @@ export default class Searchbar extends React.Component {
   }
 
   onTextChange = (e) => {
-    const { hotelNames } = this.props;
+    const { searchHotels } = this.props;
 
     let suggestions = [];
     const value = e.target.value;
     if (value.length > 0) {
       const regex = new RegExp(`^${value}`, `i`);
-      suggestions = hotelNames.sort().filter((v) => regex.test(v));
+      suggestions = searchHotels.sort().filter((v) => regex.test(v));
     }
 
     this.setState(() => ({
@@ -47,10 +47,10 @@ export default class Searchbar extends React.Component {
         <ListGroup variant="flush">
           {suggestions.map((hotel) => (
             <ListGroupItem
-              key={hotel}
+              key={id}
               onClick={(e) => this.suggestionsSelected(hotel)}
             >
-              {<Link href={`detail/${hotel.id}`}>{hotel}</Link>}
+              {<Link href={`detail/${hotel.id}`}>{hotel.name}</Link>}
             </ListGroupItem>
           ))}
         </ListGroup>
