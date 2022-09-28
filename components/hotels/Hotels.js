@@ -20,7 +20,6 @@ const Hotels = ({ hotels }) => {
                 <Col>
                   <Card className="mx-5 mb-5 hotel-list">
                     {hotel.attributes.images.data.map((item, id) => {
-                      // console.log(item.attributes.url);
                       return (
                         <div key={id}>
                           <div>

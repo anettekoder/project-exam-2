@@ -11,7 +11,7 @@ import EnquiryModal from "../../components/enquiries/EnquiryModals";
 export async function getStaticPaths() {
   try {
     const response = await axios.get(BASE_URL + "accomodations/");
-    console.log(response.data);
+
     const hotels = response.data;
     const paths = hotels.data.map((hotel) => ({
       params: { id: `${hotel.id}` },
@@ -60,7 +60,7 @@ export default function Details({ hotel }) {
       <Container className="py-5">
         <Row>
           <Col lg={6}>
-            <div>
+            <div className="pt-5">
               <div key={hotel.id}>
                 <Card.Img
                   as={Image}

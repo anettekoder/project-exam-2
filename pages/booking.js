@@ -1,11 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
 import JumbotronSmall from "../components/jumbotron/jumbotronSmall";
 import Header2 from "../public/images/header2.jpg";
 import Heading from "../components/heading";
 import HotelList from "./HotelList";
 import { BASE_URL } from "../constant/api";
-// import Favicon from "./favicon-holidaze.png";
 
 export default function Booking(props) {
   const { hotels } = props;

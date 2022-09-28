@@ -17,16 +17,15 @@ const schema = yup.object().shape({
     .email("Please enter a valid email address"),
   from: yup
     .date()
-    .required("Please choose the required start date of your visit"),
+    .required("Please choose the required start date of your visit")
+    .nullable()
+    .typeError("Invalid Date"),
   to: yup
     .date()
-    .when(
-      "from",
-      (from, schema) =>
-        from &&
-        schema.min(from, "Your end date can not be before your start date")
-    )
-    .required("Please choose the required end date of your visit"),
+    .min(yup.ref("from"), "The end date must be after the start date")
+    .required("Please choose the required end date of your visit")
+    .nullable()
+    .typeError("Invalid Date"),
 });
 
 function EnquiryForm({ hotelName }) {
@@ -41,11 +40,9 @@ function EnquiryForm({ hotelName }) {
   async function onSubmit(data) {
     setSubmitting(true);
     setServerError(null);
-    console.log(data);
 
     try {
       const response = await axios.post(BASE_URL + "enquiries/", { data });
-      console.log("response", response.data);
       setSubmitSuccess("Thank you for your booking!");
     } catch (error) {
       console.log("error", error);

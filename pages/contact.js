@@ -14,14 +14,13 @@ export default function Contact() {
     <div>
       <Head>
         <meta
-          name="description"
-          content="Contact page for Holidaze. A booking website, specialized on hotels in Bergen"
-        />
-        <link rel="icon" href="/favicon.ico" />
-        <meta
           name="viewport"
           content="width=device-width, initial-scale=1"
         ></meta>
+        <meta
+          name="description"
+          content="Contact page for Holidaze. A booking website, specialized on hotels in Bergen"
+        />
         <title>Holidaze | Contact</title>
         <link rel="icon" href="/favicon-holidaze.png" />
       </Head>

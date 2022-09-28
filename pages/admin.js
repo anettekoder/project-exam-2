@@ -32,6 +32,10 @@ export default function Admin() {
       try {
         const enquiriesResponse = await http.get("/enquiries");
         setEnquiries(enquiriesResponse.data);
+      } catch (error) {
+        console.log(error);
+      }
+      try {
         const messagesResponse = await http.get("/messages");
         setMessages(messagesResponse.data);
       } catch (error) {

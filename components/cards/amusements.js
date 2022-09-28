@@ -6,8 +6,6 @@ import Floyen from "../../public/images/floyen.jpg";
 import Grieg from "../../public/images/grieg.jpg";
 import Shopping from "../../public/images/shopping.jpg";
 
-// Card details
-
 // Amusements cards
 
 const AmusementsCards = () => {

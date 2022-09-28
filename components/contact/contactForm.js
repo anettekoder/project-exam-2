@@ -5,7 +5,6 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { BASE_URL } from "../../constant/api";
 import Form from "react-bootstrap/Form";
-// import FormError from "../admin/FormError";
 import { Button } from "react-bootstrap";
 
 const schema = yup.object().shape({
@@ -38,7 +37,6 @@ function ContactForm() {
 
     try {
       const response = await axios.post(BASE_URL + "messages/", { data });
-      console.log("response", response.data);
       setSubmitSuccess("Thank you for your message!");
     } catch (error) {
       console.log("error", error);

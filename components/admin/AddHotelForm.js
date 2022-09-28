@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import AuthContext from "../../context/AuthContext";
@@ -7,7 +7,6 @@ import useAxios from "../../hooks/useAxios";
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { BASE_URL } from "../../constant/api";
-import Alert from "react-bootstrap/Alert";
 
 const schema = yup.object().shape({
   name: yup
@@ -41,7 +40,6 @@ function AddHotelForm() {
   const http = useAxios();
 
   const handleChange = (data) => {
-    console.log(data.images);
     setFile(data.images[0]);
   };
 
@@ -65,7 +63,7 @@ function AddHotelForm() {
         BASE_URL + "accomodations/?populate=*",
         formData
       );
-      console.log("data", response.data);
+
       setSubmitSuccess("Hotel Added!");
     } catch (error) {
       console.log(error);

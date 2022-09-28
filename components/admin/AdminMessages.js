@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { Table } from "react-bootstrap";
 
 function AdminMessages({ messages }) {

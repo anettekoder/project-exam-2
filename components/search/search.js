@@ -21,7 +21,7 @@ export default class Searchbar extends React.Component {
     const value = e.target.value;
     if (value.length > 0) {
       const regex = new RegExp(`^${value}`, `i`);
-      suggestions = searchHotels.sort().filter((v) => regex.test(v));
+      suggestions = searchHotels.sort().filter((v) => regex.test(v.name));
     }
 
     this.setState(() => ({
@@ -47,8 +47,8 @@ export default class Searchbar extends React.Component {
         <ListGroup variant="flush">
           {suggestions.map((hotel) => (
             <ListGroupItem
-              key={id}
-              onClick={(e) => this.suggestionsSelected(hotel)}
+              key={hotel.id}
+              onClick={(e) => this.suggestionsSelected(hotel.name)}
             >
               {<Link href={`detail/${hotel.id}`}>{hotel.name}</Link>}
             </ListGroupItem>
