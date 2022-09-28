@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
   images: {
     domains: ["https://strapi-holidaze-exam.herokuapp.com/"],
     domains: ["res.cloudinary.com"],
