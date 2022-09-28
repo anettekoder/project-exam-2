@@ -95,6 +95,7 @@ function EnquiryForm({ hotelName }) {
           <div className="flex flex-col md:flex-row justify-center items-start">
             <div className="flex flex-col justify-center items-start">
               <Form.Label className="font-heading">From</Form.Label>
+              <br />
               {errors?.from && (
                 <span className="warning">{errors.from.message}</span>
               )}
@@ -107,6 +108,7 @@ function EnquiryForm({ hotelName }) {
             </div>
             <div className="flex flex-col justify-center items-start">
               <Form.Label className="font-heading">To</Form.Label>
+              <br />
               {errors?.to && (
                 <span className="warning">{errors.to.message}</span>
               )}
