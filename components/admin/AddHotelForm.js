@@ -110,6 +110,7 @@ function AddHotelForm() {
             />
 
             <Form.Label>Upload image</Form.Label>
+            <br />
             {errors?.images && (
               <span className="warning">{errors.images.message}</span>
             )}
