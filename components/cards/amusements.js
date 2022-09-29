@@ -25,7 +25,7 @@ const AmusementsCards = () => {
     {
       image: Shopping,
       title: "In Bergen you will find a large and tempting selection of shops.",
-      text: "Go shoping in small and specialized shops to large department stores.",
+      text: "Go shopping in small and specialized shops to large department stores.",
       alt: "Inside the shopping center, Galleriet",
     },
   ];
