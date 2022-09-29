@@ -23,6 +23,9 @@ export default class Searchbar extends React.Component {
       const regex = new RegExp(`^${value}`, `i`);
       suggestions = searchHotels.sort().filter((v) => regex.test(v.name));
     }
+    // if (suggestions == "") {
+    //   return "no data";
+    // }
 
     this.setState(() => ({
       suggestions,
@@ -39,7 +42,7 @@ export default class Searchbar extends React.Component {
 
   renderSuggestions = () => {
     const { suggestions } = this.state;
-    // if (suggestions.value === 0) {
+    // if (suggestions.length === "") {
     //   return "no hotel";
     // }
     if (suggestions.length === 0) {

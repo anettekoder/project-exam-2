@@ -104,7 +104,7 @@ function AddHotelForm() {
               {...register("price", { required: true })}
             />
 
-            <Form.Label>Upload image</Form.Label>
+            <Form.Label>Upload image </Form.Label>
             {errors?.images && (
               <span className="warning">{errors.images.message}</span>
             )}
