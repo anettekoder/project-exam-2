@@ -24,9 +24,6 @@ export default class Searchbar extends React.Component {
       const regex = new RegExp(`^${value}`, `i`);
       suggestions = searchHotels.sort().filter((v) => regex.test(v.name));
     }
-    // if (suggestions == "") {
-    //   return "no data";
-    // }
 
     this.setState(() => ({
       suggestions,
@@ -43,10 +40,7 @@ export default class Searchbar extends React.Component {
 
   renderSuggestions = () => {
     const { suggestions } = this.state;
-    console.log(suggestions);
-    if (!suggestions.length) {
-      return "no hotel";
-    }
+
     if (suggestions.length === 0) {
       return null;
     }
@@ -86,6 +80,12 @@ export default class Searchbar extends React.Component {
             </InputGroup>
           </Col>
         </Row>
+        {this.state.suggestions.length === 0 &&
+          this.state.text.trim().length !== 0 && (
+            <div>
+              There are no hotels that starts with <b>{this.state.text}</b>
+            </div>
+          )}
       </Container>
     );
   }

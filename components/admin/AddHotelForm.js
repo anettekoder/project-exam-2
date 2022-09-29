@@ -7,7 +7,6 @@ import useAxios from "../../hooks/useAxios";
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { BASE_URL } from "../../constant/api";
-import Alert from "react-bootstrap/Alert";
 
 const schema = yup.object().shape({
   name: yup
@@ -20,7 +19,12 @@ const schema = yup.object().shape({
     .typeError("Price must be a number")
     .positive()
     .integer(),
-  images: yup.mixed().required("Please upload a hotel image"),
+  images: yup.mixed().test("file", "Please add a hotel image", (value) => {
+    if (value.length > 0) {
+      return true;
+    }
+    return false;
+  }),
   description: yup
     .string()
     .required("Please enter your description")
