@@ -6,6 +6,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { BASE_URL } from "../../constant/api";
 import { Button, Form } from "react-bootstrap";
 
+let isDate = new Date().toISOString().split("T")[0];
+
 const schema = yup.object().shape({
   name: yup
     .string()
@@ -17,11 +19,13 @@ const schema = yup.object().shape({
     .email("Please enter a valid email address"),
   from: yup
     .date()
+    // .transform((value) => (isDate(value) ? undefined : value))
     .required("Please choose the required start date of your visit")
     .nullable()
     .typeError("Invalid Date"),
   to: yup
     .date()
+    // .transform((value) => (isDate(value) ? undefined : value))
     .min(yup.ref("from"), "The end date must be after the start date")
     .required("Please choose the required end date of your visit")
     .nullable()
@@ -29,6 +33,10 @@ const schema = yup.object().shape({
 });
 
 function EnquiryForm({ hotelName }) {
+  const [account, setAccount] = useState({
+    from: "",
+    to: "",
+  });
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState(null);
   const [submitSuccess, setSubmitSuccess] = useState(null);
@@ -103,6 +111,7 @@ function EnquiryForm({ hotelName }) {
                 className="w-64 mb-4 md:mr-4 focus:border-black focus:ring-black md:w-56"
                 type="date"
                 name="from"
+                min={new Date().toISOString().split("T")[0]}
                 {...register("from", { required: true })}
               />
             </div>
@@ -116,6 +125,11 @@ function EnquiryForm({ hotelName }) {
                 className="w-64  mb-4 focus:border-black focus:ring-black md:w-56"
                 type="date"
                 name="to"
+                min={
+                  account.from
+                    ? new Date(account.from).toISOString().split("T")[0]
+                    : ""
+                }
                 {...register("to", { required: true })}
               />
             </div>

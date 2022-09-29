@@ -39,6 +39,9 @@ export default class Searchbar extends React.Component {
 
   renderSuggestions = () => {
     const { suggestions } = this.state;
+    // if (suggestions.value === 0) {
+    //   return "no hotel";
+    // }
     if (suggestions.length === 0) {
       return null;
     }
