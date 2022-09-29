@@ -3,6 +3,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import ListGroup from "react-bootstrap/ListGroup";
 import React from "react";
 import Link from "next/link";
+import { useState } from "react";
 import { Col, Container, ListGroupItem, Row } from "react-bootstrap";
 
 export default class Searchbar extends React.Component {
@@ -42,9 +43,10 @@ export default class Searchbar extends React.Component {
 
   renderSuggestions = () => {
     const { suggestions } = this.state;
-    // if (suggestions.length === "") {
-    //   return "no hotel";
-    // }
+    console.log(suggestions);
+    if (!suggestions.length) {
+      return "no hotel";
+    }
     if (suggestions.length === 0) {
       return null;
     }

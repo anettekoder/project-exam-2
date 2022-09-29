@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import AuthContext from "../../context/AuthContext";
@@ -7,6 +7,7 @@ import useAxios from "../../hooks/useAxios";
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { BASE_URL } from "../../constant/api";
+import Alert from "react-bootstrap/Alert";
 
 const schema = yup.object().shape({
   name: yup
@@ -104,7 +105,7 @@ function AddHotelForm() {
               {...register("price", { required: true })}
             />
 
-            <Form.Label>Upload image </Form.Label>
+            <Form.Label>Upload image</Form.Label>
             {errors?.images && (
               <span className="warning">{errors.images.message}</span>
             )}
