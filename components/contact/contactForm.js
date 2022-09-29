@@ -63,30 +63,28 @@ function ContactForm() {
             controlId="formGroupEmail"
             disabled={submitting}
           >
-            {errors?.name && (
-              <span className="warning">{errors.name.message}</span>
-            )}
             <Form.Control
-              className="mb-3"
               type="text"
               name="name"
               placeholder="Full name"
               {...register("name", { required: true })}
             />
-            {errors?.email && (
-              <span className="warning">{errors.email.message}</span>
+            {errors?.name && (
+              <span className="warning">{errors.name.message}</span>
             )}
+
             <Form.Control
+              className="mt-3"
               type="email"
               name="email"
               placeholder="Email"
               {...register("email", { required: true })}
             />
+            {errors?.email && (
+              <span className="warning">{errors.email.message}</span>
+            )}
           </Form.Group>
           <Form.Group className="mb-3" controlId="ContactForm.ControlTextarea1">
-            {errors?.message && (
-              <span className="warning">{errors.message.message}</span>
-            )}
             <Form.Control
               as="textarea"
               rows={3}
@@ -95,6 +93,9 @@ function ContactForm() {
               placeholder="Message..."
               {...register("message", { required: true })}
             />
+            {errors?.message && (
+              <span className="warning">{errors.message.message}</span>
+            )}
           </Form.Group>
           <Button type="submit">{submitting ? "Sending..." : "SEND"}</Button>
         </Form>

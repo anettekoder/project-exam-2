@@ -88,44 +88,45 @@ function AddHotelForm() {
         >
           {serverError && <span>{serverError}</span>}
           <Form.Group className="flex flex-col w-full" disabled={submitting}>
-            {errors?.name && (
-              <span className="warning">{errors.name.message}</span>
-            )}
             <Form.Control
-              className="border-2 focus:border-black focus:ring-black w-full md:text-xl md:h-14 mb-5"
+              className="border-2 focus:border-black focus:ring-black w-full md:text-xl md:h-14"
               type="text"
               name="name"
               placeholder="Hotel name *"
               {...register("name", { required: true })}
             />
-            {errors?.price && (
-              <span className="warning">{errors.price.message}</span>
+            {errors?.name && (
+              <span className="warning">{errors.name.message}</span>
             )}
+
             <Form.Control
-              className="border-2 focus:border-black focus:ring-black w-full md:text-xl md:h-14 mb-5"
+              className="border-2 focus:border-black focus:ring-black w-full md:text-xl md:h-14 mt-3"
               type="text"
               name="price"
               placeholder="Price *"
               {...register("price", { required: true })}
             />
-
-            <Form.Label>Upload image</Form.Label>
-            <br />
-            {errors?.images && (
-              <span className="warning">{errors.images.message}</span>
+            {errors?.price && (
+              <span className="warning">{errors.price.message}</span>
             )}
+            <br />
+            <Form.Label className="mt-3">Upload image</Form.Label>
+
             <Form.Control
-              className="w-full md:text-xl md:h-14 mt-2 mb-5"
+              className="w-full md:text-xl md:h-14 "
               onChange={handleChange}
               type="file"
               accept="image/*"
               name="images"
               {...register("images", { required: true })}
             />
-            {errors?.description && (
-              <span className="warning">{errors.description.message}</span>
+
+            {errors?.images && (
+              <span className="warning">{errors.images.message}</span>
             )}
+
             <Form.Control
+              className="mt-3"
               as="textarea"
               rows={3}
               type="text"
@@ -133,11 +134,13 @@ function AddHotelForm() {
               placeholder="Description *"
               {...register("description", { required: true })}
             />
-
-            <Button type="submit" variant="primary" className="mt-3">
-              {submitting ? "Adding hotel..." : "Add Hotel"}
-            </Button>
+            {errors?.description && (
+              <span className="warning">{errors.description.message}</span>
+            )}
           </Form.Group>
+          <Button type="submit" variant="primary" className="mt-3">
+            {submitting ? "Adding hotel..." : "Add Hotel"}
+          </Button>
         </Form>
       )}
     </>

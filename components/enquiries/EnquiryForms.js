@@ -6,8 +6,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { BASE_URL } from "../../constant/api";
 import { Button, Form } from "react-bootstrap";
 
-let isDate = new Date().toISOString().split("T")[0];
-
 const schema = yup.object().shape({
   name: yup
     .string()
@@ -79,50 +77,50 @@ function EnquiryForm({ hotelName }) {
             defaultValue={hotelName}
             {...register("hotel", { required: true })}
           />
-          {errors?.name && (
-            <span className="warning">{errors.name.message}</span>
-          )}
+
           <Form.Control
-            className="w-64 focus:border-black focus:ring-black md:max-w-lg md:w-full mb-4"
+            className="w-64 focus:border-black focus:ring-black md:max-w-lg md:w-full"
             type="text"
             name="name"
             placeholder="Full name"
             {...register("name", { required: true })}
           />
-          {errors?.email && (
-            <span className="warning">{errors.email.message}</span>
+          {errors?.name && (
+            <span className="warning">{errors.name.message}</span>
           )}
+
           <Form.Control
-            className="w-64 focus:border-black focus:ring-black md:max-w-lg md:w-full mb-4"
+            className="w-64 focus:border-black focus:ring-black md:max-w-lg md:w-full mt-4"
             type="email"
             name="email"
             placeholder="Email"
             {...register("email", { required: true })}
           />
+          {errors?.email && (
+            <span className="warning">{errors.email.message}</span>
+          )}
 
           <div className="flex flex-col md:flex-row justify-center items-start">
             <div className="flex flex-col justify-center items-start">
-              <Form.Label className="font-heading">From</Form.Label>
+              <Form.Label className="font-heading mt-4">From</Form.Label>
               <br />
-              {errors?.from && (
-                <span className="warning">{errors.from.message}</span>
-              )}
+
               <Form.Control
-                className="w-64 mb-4 md:mr-4 focus:border-black focus:ring-black md:w-56"
+                className="w-64 md:mr-4 focus:border-black focus:ring-black md:w-5"
                 type="date"
                 name="from"
                 min={new Date().toISOString().split("T")[0]}
                 {...register("from", { required: true })}
               />
+              {errors?.from && (
+                <span className="warning">{errors.from.message}</span>
+              )}
             </div>
             <div className="flex flex-col justify-center items-start">
-              <Form.Label className="font-heading">To</Form.Label>
-              <br />
-              {errors?.to && (
-                <span className="warning">{errors.to.message}</span>
-              )}
+              <Form.Label className="font-heading mt-4">To</Form.Label>
+
               <Form.Control
-                className="w-64  mb-4 focus:border-black focus:ring-black md:w-56"
+                className="w-64 focus:border-black focus:ring-black md:w-56"
                 type="date"
                 name="to"
                 min={
@@ -132,10 +130,14 @@ function EnquiryForm({ hotelName }) {
                 }
                 {...register("to", { required: true })}
               />
+
+              {errors?.to && (
+                <span className="warning">{errors.to.message}</span>
+              )}
             </div>
           </div>
 
-          <Button type="submit" variant="primary">
+          <Button type="submit" variant="primary" className="mt-4">
             {submitting ? "Booking..." : "Book reservation"}
           </Button>
         </Form>

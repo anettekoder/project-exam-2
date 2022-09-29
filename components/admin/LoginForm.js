@@ -49,26 +49,26 @@ export default function LoginForm() {
   return (
     <>
       <Form onSubmit={handleSubmit(onSubmit)} className="px-5">
+        {errors?.name && (
+          <span className="warning">{errors.identifier.message}</span>
+        )}
         {loginError && (
           <FormError>{"Username or password is uncorrect"}</FormError>
         )}
         <fieldset disabled={submitting}>
           <div>
-            {errors?.identifier && (
-              <FormError>{errors.identifier.message}</FormError>
-            )}
             <FormControl
               name="identifier"
               {...register("identifier", { required: true })}
               placeholder="Username"
               className="appearance-none rounded-none relative block w-full my-2 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900   sm:text-sm"
             />
+            {errors?.identifier && (
+              <FormError>{errors.identifier.message}</FormError>
+            )}
           </div>
 
           <div>
-            {errors?.password && (
-              <FormError>{errors.password.message}</FormError>
-            )}
             <FormControl
               name="password"
               placeholder="Password"
@@ -76,6 +76,9 @@ export default function LoginForm() {
               type="password"
               className="appearance-none rounded-none relative block w-full my-2 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  sm:text-sm"
             />
+            {errors?.password && (
+              <FormError>{errors.password.message}</FormError>
+            )}
           </div>
           <Button type="submit" variant="primary" className="mt-3">
             {submitting ? "Loggin in..." : "Login"}

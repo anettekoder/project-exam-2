@@ -61,6 +61,9 @@ const Footer = () => {
           <Col xs={12} className="p pb-4">
             &copy; Holidaze Booking. All rights reserved.
           </Col>
+          <Col xs={12} className="p pb-4">
+            Text about the hotels is taken from Booking.com
+          </Col>
         </Row>
       </Container>
     </div>
