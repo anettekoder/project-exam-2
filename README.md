@@ -1,4 +1,5 @@
 Project Exam 2 from my second year of frontend study at Noroff.
+![image](https://user-images.githubusercontent.com/69402230/196057795-e714f7a5-93f1-41af-ba3c-9e6be18c142a.jpg)
 
 Login to admin:
 Username: usertest
