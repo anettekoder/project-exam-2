@@ -29,6 +29,7 @@ It also had to include:
 
 ## Built With
 
+- [Next.js](https://nextjs.org/)
 - [React.js](https://reactjs.org/)
 - [Bootstrap](https://getbootstrap.com)
 
